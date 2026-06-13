@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>📖 Hệ thống Từ vựng Tiếng Anh | 14 chủ đề trọng tâm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            padding: 30px 20px 50px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* header + search area */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            background: linear-gradient(135deg, #FDE68A, #FCD34D, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #cbd5e6;
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* search card */
+        .search-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 8px 20px 8px 28px;
+            max-width: 650px;
+            margin: 30px auto 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 120, 0.5);
+        }
+
+        .search-card input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 14px 0;
+            font-size: 1rem;
+            color: #f1f5f9;
+            outline: none;
+            font-weight: 500;
+        }
+
+        .search-card input::placeholder {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .search-card button {
+            background: #fbbf24;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #0f172a;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .search-card button:hover {
+            background: #f59e0b;
+            transform: scale(0.97);
+        }
+
+        .result-area {
+            max-width: 800px;
+            margin: 10px auto 0;
+            background: #1e293b;
+            border-radius: 28px;
+            padding: 0px 20px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .result-card {
+            background: #334155;
+            margin: 16px 0;
+            padding: 16px 20px;
+            border-radius: 28px;
+            color: white;
+            border-left: 6px solid #fbbf24;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .result-card strong {
+            color: #fcd34d;
+            font-size: 1.1rem;
+        }
+
+        .result-card .meaning {
+            margin-top: 8px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .no-result {
+            color: #facc15;
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .close-search {
+            text-align: right;
+            padding: 12px 8px 0 0;
+        }
+
+        .close-search span {
+            background: #475569;
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: #f1f5f9;
+        }
+
+        /* grid lessons */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.3s;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 36px -12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            padding: 22px 20px;
+            color: white;
+        }
+
+        .card-header h2 {
+            font-size: 1.45rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .card-header p {
+            opacity: 0.88;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 22px 20px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .desc {
+            color: #334155;
+            margin-bottom: 20px;
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px 6px;
+            text-align: center;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .btn-theory {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-exercise {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+            transform: scale(0.97);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 65px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            border-top: 1px solid #334155;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 680px) {
+            h1 { font-size: 1.9rem; }
+            .search-card { border-radius: 40px; padding: 5px 15px; }
+            .search-card button { padding: 7px 18px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>📖 BỘ TỪ VỰNG ÔN THI ĐẠI HỌC</h1>
+        <div class="subtitle">Destination B2 với 14 chủ đề</div>
+    </div>
+
+    <!-- Tra cứu từ vựng thông minh -->
+    <div class="search-card">
+        <input type="text" id="vocabSearchInput" placeholder="🔍 Tra từ vựng ... (ví dụ: explore, benefit, environment)" autocomplete="off">
+        <button id="searchBtn">📖 Tìm kiếm</button>
+    </div>
+    <div id="searchResults" class="result-area" style="display: none;"></div>
+
+    <!-- Grid 14 bài học từ vựng (Unit chẵn 2→28) -->
+    <div class="grid">
+
+        <!-- UNIT 2 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #059669, #10b981);">
+                <h2>🌍 Unit 2: Travel & Transport</h2>
+                <p>Du lịch & Phương tiện di chuyển</p>
+                <div class="badge">✈️ 24 từ vựng trọng tâm</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về các loại hình du lịch, sân bay, tàu xe, lịch trình, và các động từ đi kèm.</div>
+                <div class="btn-group">
+                    <a href="Unit2/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit2/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 4 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #dc2626, #ef4444);">
+                <h2>🍽️ Unit 4: Hobbies, sports and games</h2>
+                <p>Đồ ăn & Sức khỏe</p>
+                <div class="badge">🥗 Thành ngữ, thực phẩm</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về chế độ ăn, dinh dưỡng, triệu chứng bệnh, và câu giao tiếp thông dụng.</div>
+                <div class="btn-group">
+                    <a href="Unit4/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit4/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 6 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #7c3aed, #a78bfa);">
+                <h2>💼 Unit 6: Science and Technology</h2>
+                <p>Công việc & Kinh doanh</p>
+                <div class="badge">📈 Collocations phổ biến</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng văn phòng, họp hành, đàm phán, CV, và tính từ miêu tả công việc.</div>
+                <div class="btn-group">
+                    <a href="Unit6/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit6/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 8 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #ea580c, #f97316);">
+                <h2>🎓 Unit 8: The media</h2>
+                <p>Giáo dục & Học tập</p>
+                <div class="badge">📚 Cụm từ học thuật</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về trường lớp, kỳ thi, phương pháp học, bằng cấp và danh từ học thuật.</div>
+                <div class="btn-group">
+                    <a href="Unit8/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit8/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 10 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #0891b2, #06b6d4);">
+                <h2>💡 Unit 10: People and society</h2>
+                <p>Công nghệ & Đổi mới</p>
+                <div class="badge">📱 AI, gadget, xu hướng</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về phần mềm, thiết bị, internet, mạng xã hội và các động từ công nghệ.</div>
+                <div class="btn-group">
+                    <a href="Unit10/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit10/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 12 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #b45309, #d97706);">
+                <h2>🎨 Unit 12: The law and crime</h2>
+                <p>Nghệ thuật & Truyền thông</p>
+                <div class="badge">🎬 Phim ảnh, báo chí</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về hội họa, điện ảnh, báo chí, truyền hình, các tính từ đánh giá.</div>
+                <div class="btn-group">
+                    <a href="Unit12/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit12/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 14 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #1e3a8a, #3b82f6);">
+                <h2>🌿 Unit 14: Health and fitness</h2>
+                <p>Môi trường & Thiên nhiên</p>
+                <div class="badge">🌎 Biến đổi khí hậu</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về ô nhiễm, tái chế, bảo tồn, năng lượng tái tạo và động vật hoang dã.</div>
+                <div class="btn-group">
+                    <a href="Unit14/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit14/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 16 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #be185d, #ec489a);">
+                <h2>❤️ Unit 16: Food and drink</h2>
+                <p>Cảm xúc & Tính cách</p>
+                <div class="badge">😊 Adj miêu tả tâm trạng</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về trạng thái vui, buồn, lo lắng, phấn khích và idioms về cảm xúc.</div>
+                <div class="btn-group">
+                    <a href="Unit16/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit16/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 18 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #0f766e, #14b8a6);">
+                <h2>🏡 Unit 18: Education and learning</h2>
+                <p>Nhà cửa & Thói quen</p>
+                <div class="badge">🛋️ Nội thất, việc nhà</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về phòng ốc, đồ đạc, hoạt động hàng ngày và trạng từ tần suất.</div>
+                <div class="btn-group">
+                    <a href="Unit18/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit18/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 20 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #6b21a5, #c084fc);">
+                <h2>🎭 Unit 20: Weather and the environment</h2>
+                <p>Văn hóa & Lễ hội</p>
+                <div class="badge">🎉 Phong tục tập quán</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về lễ hội toàn cầu, truyền thống, trang phục, ẩm thực lễ hội.</div>
+                <div class="btn-group">
+                    <a href="Unit20/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit20/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 22 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #b45309, #f59e0b);">
+                <h2>⚽ Unit 22: Money and shopping</h2>
+                <p>Thể thao & Giải trí</p>
+                <div class="badge">🏆 Động từ + sports</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về các môn thể thao, thiết bị, giải đấu, sở thích thư giãn.</div>
+                <div class="btn-group">
+                    <a href="Unit22/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit22/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 24 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #1e3a8a, #2563eb);">
+                <h2>💸 Unit 24: Entertainment</h2>
+                <p>Mua sắm & Tiền bạc</p>
+                <div class="badge">💰 Giao dịch, giảm giá</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về cửa hàng, thanh toán, ngân hàng, tính từ giá cả và động từ mua bán.</div>
+                <div class="btn-group">
+                    <a href="Unit24/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit24/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 26 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #831843, #db2777);">
+                <h2>🧠 Unit 26: Fashion and design</h2>
+                <p>Tâm lý & Hành vi</p>
+                <div class="badge">🧩 Hành vi con người</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về tính cách, cảm xúc phức tạp, các cụm động từ liên quan suy nghĩ.</div>
+                <div class="btn-group">
+                    <a href="Unit26/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit26/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- UNIT 28 -->
+        <div class="card">
+            <div class="card-header" style="background: linear-gradient(125deg, #0f172a, #334155);">
+                <h2>🚀 Unit 28: Work and business</h2>
+                <p>Tương lai & Vấn đề toàn cầu</p>
+                <div class="badge">🌍 Biến đổi khí hậu, công dân</div>
+            </div>
+            <div class="card-body">
+                <div class="desc">Từ vựng về dân số, công nghệ tương lai, khủng hoảng, giải pháp, xu hướng.</div>
+                <div class="btn-group">
+                    <a href="Unit28/theory.html" class="btn btn-theory">📘 Từ mới</a>
+                    <a href="Unit28/practice.html" class="btn btn-exercise">✍️ Bài tập từ vựng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        🌟 Tra từ vựng nhanh với ô tìm kiếm trên đầu trang | 14 Unit theo lộ trình | Lý thuyết + bài tập chi tiết<br>
+        ⚡ Mỗi bài học đều có từ vựng chuyên sâu, ví dụ thực tế và bài tập củng cố.
+    </footer>
+</div>
+
+<script>
+    // ======================= DỮ LIỆU TỪ VỰNG MẪU CHO 14 UNIT ========================
+    // Bao gồm các từ phổ biến liên quan đến từng chủ đề (để tìm kiếm demo)
+    // Người dùng sau có thể mở rộng file này hoặc nhúng JSON từ file riêng.
+    const vocabularyDatabase = [
+        // Unit 2 - Travel
+        { word: "itinerary", meaning: "hành trình, lộ trình chi tiết", unit: "Unit 2: Travel & Transport" },
+        { word: "departure", meaning: "sự khởi hành", unit: "Unit 2" },
+        { word: "layover", meaning: "quá cảnh (dừng giữa chuyến bay)", unit: "Unit 2" },
+        { word: "commute", meaning: "đi lại thường xuyên (xe buýt/tàu)", unit: "Unit 2" },
+        { word: "scenic", meaning: "đẹp, thơ mộng (phong cảnh)", unit: "Unit 2" },
+        // Unit 4 - Food & Health
+        { word: "nutrition", meaning: "dinh dưỡng", unit: "Unit 4: Food & Health" },
+        { word: "allergy", meaning: "dị ứng", unit: "Unit 4" },
+        { word: "balanced diet", meaning: "chế độ ăn cân bằng", unit: "Unit 4" },
+        { word: "symptom", meaning: "triệu chứng", unit: "Unit 4" },
+        // Unit 6 - Work & Business
+        { word: "deadline", meaning: "hạn chót", unit: "Unit 6: Work & Business" },
+        { word: "negotiate", meaning: "thương lượng", unit: "Unit 6" },
+        { word: "colleague", meaning: "đồng nghiệp", unit: "Unit 6" },
+        // Unit 8 - Education
+        { word: "scholarship", meaning: "học bổng", unit: "Unit 8: Education" },
+        { word: "curriculum", meaning: "chương trình giảng dạy", unit: "Unit 8" },
+        { word: "plagiarism", meaning: "đạo văn", unit: "Unit 8" },
+        // Unit 10 - Technology
+        { word: "innovation", meaning: "sự đổi mới", unit: "Unit 10: Technology" },
+        { word: "gadget", meaning: "thiết bị công nghệ nhỏ", unit: "Unit 10" },
+        { word: "algorithm", meaning: "thuật toán", unit: "Unit 10" },
+        // Unit 12 - Art & Media
+        { word: "masterpiece", meaning: "kiệt tác", unit: "Unit 12: Art & Media" },
+        { word: "censorship", meaning: "kiểm duyệt", unit: "Unit 12" },
+        // Unit 14 - Environment
+        { word: "sustainable", meaning: "bền vững", unit: "Unit 14: Environment" },
+        { word: "carbon footprint", meaning: "dấu chân carbon", unit: "Unit 14" },
+        { word: "deforestation", meaning: "phá rừng", unit: "Unit 14" },
+        // Unit 16 - Feelings
+        { word: "melancholy", meaning: "u sầu", unit: "Unit 16: Feelings" },
+        { word: "ecstatic", meaning: "vô cùng sung sướng", unit: "Unit 16" },
+        // Unit 18 - House/Routine
+        { word: "chore", meaning: "việc vặt trong nhà", unit: "Unit 18: House" },
+        { word: "declutter", meaning: "dọn dẹp bỏ bớt đồ", unit: "Unit 18" },
+        // Unit 20 - Culture
+        { word: "heritage", meaning: "di sản", unit: "Unit 20: Culture" },
+        { word: "ritual", meaning: "nghi lễ", unit: "Unit 20" },
+        // Unit 22 - Sports
+        { word: "endurance", meaning: "sức bền", unit: "Unit 22: Sports" },
+        { word: "tournament", meaning: "giải đấu", unit: "Unit 22" },
+        // Unit 24 - Shopping
+        { word: "refund", meaning: "hoàn tiền", unit: "Unit 24: Shopping" },
+        { word: "bargain", meaning: "món hời, mặc cả", unit: "Unit 24" },
+        // Unit 26 - Psychology
+        { word: "cognitive", meaning: "thuộc về nhận thức", unit: "Unit 26: Psychology" },
+        { word: "empathy", meaning: "sự đồng cảm", unit: "Unit 26" },
+        // Unit 28 - Global issues
+        { word: "pandemic", meaning: "đại dịch", unit: "Unit 28: Global Issues" },
+        { word: "resilience", meaning: "khả năng phục hồi", unit: "Unit 28" }
+    ];
+
+    // DOM elements
+    const searchInput = document.getElementById('vocabSearchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const resultDiv = document.getElementById('searchResults');
+
+    // Hiển thị kết quả tìm kiếm
+    function performSearch() {
+        const keyword = searchInput.value.trim().toLowerCase();
+        if (keyword === "") {
+            resultDiv.style.display = "none";
+            resultDiv.innerHTML = "";
+            return;
+        }
+
+        const matchedItems = vocabularyDatabase.filter(item =>
+            item.word.toLowerCase().includes(keyword) ||
+            (item.meaning && item.meaning.toLowerCase().includes(keyword))
+        );
+
+        if (matchedItems.length === 0) {
+            resultDiv.style.display = "block";
+            resultDiv.innerHTML = `
+                <div class="close-search"><span id="closeSearchBtn">✖ Đóng</span></div>
+                <div class="no-result">😕 Không tìm thấy từ vựng "${searchInput.value}". Hãy thử từ khác nhé!</div>
+            `;
+            const closeBtn = document.getElementById('closeSearchBtn');
+            if (closeBtn) closeBtn.onclick = () => { resultDiv.style.display = "none"; searchInput.value = ""; };
+            return;
+        }
+
+        let resultsHtml = `<div class="close-search"><span id="closeSearchBtn">✖ Đóng</span></div>`;
+        matchedItems.forEach(item => {
+            resultsHtml += `
+                <div class="result-card">
+                    <strong>📘 ${item.word}</strong>  <span style="background:#facc1533; padding:2px 8px; border-radius:40px; font-size:0.7rem;">${item.unit}</span>
+                    <div class="meaning">✨ ${item.meaning}</div>
+                </div>
+            `;
+        });
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = resultsHtml;
+        const closeBtn = document.getElementById('closeSearchBtn');
+        if (closeBtn) closeBtn.onclick = () => { resultDiv.style.display = "none"; searchInput.value = ""; };
+    }
+
+    searchBtn.addEventListener('click', performSearch);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') performSearch();
+    });
+
+    // Ẩn kết quả nếu click ra ngoài nhưng vẫn giữ chức năng đóng
+    document.addEventListener('click', function(event) {
+        const isClickInsideSearch = event.target.closest('.search-card') || event.target.closest('#searchResults');
+        if (!isClickInsideSearch && resultDiv.style.display === 'block') {
+            // không tự động đóng để tránh khó chịu, nhưng nếu click bên ngoài không đóng, giữ nguyên. Nhưng có nút đóng rồi
+            // ta không tự động đóng để trải nghiệm tốt.
+        }
+    });
+</script>
+</body>
+</html>
