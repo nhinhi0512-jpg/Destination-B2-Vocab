@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Unit 2: Travel & Transport - Lý thuyết từ vựng chi tiết | Destination B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 30px 20px 60px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            background: #059669;
+            color: white;
+            box-shadow: 0 8px 18px rgba(5,150,105,0.3);
+        }
+        .tab-pane {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+        .tab-pane.active-pane {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* header & card */
+        .unit-header {
+            background: linear-gradient(125deg, #059669, #10b981);
+            border-radius: 40px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .group {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .group-header {
+            padding: 20px 28px;
+            border-bottom: 4px solid;
+        }
+        .group-header h2 {
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge-group {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .group-content {
+            padding: 24px 28px;
+        }
+        /* Grid cho nhóm 1 contrast */
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .contrast-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+            border-left: 5px solid;
+            transition: all 0.2s;
+        }
+        .contrast-card strong {
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .example {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-top: 8px;
+            font-style: italic;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+        }
+        /* grid vocab (nhóm 4 dạng ô lớn) */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .word-card {
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 18px;
+            border-left: 6px solid #eab308;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .word-card .main-word {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #854d0e;
+            margin-bottom: 4px;
+        }
+        .ipa {
+            font-family: monospace;
+            color: #475569;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .meaning {
+            font-weight: 600;
+            color: #0f172a;
+            border-left: 3px solid #facc15;
+            padding-left: 10px;
+            margin: 8px 0;
+        }
+        .example-sentence {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            color: #334155;
+        }
+        .colloc {
+            font-size: 0.85rem;
+            background: #fff1cf;
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 8px 0;
+        }
+        .word-forms {
+            background: #e6f7f5;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+        .syn-ant {
+            font-size: 0.8rem;
+            color: #1f2937;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* phrasal & colloc màu xanh (nhóm 2) */
+        .phrasal-blue {
+            background: #dcfce7;
+            border-left: 5px solid #10b981;
+            padding: 12px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+        .phrasal-term {
+            font-weight: 800;
+            color: #065f46;
+            font-size: 1rem;
+        }
+        .timeline-stage {
+            margin-bottom: 28px;
+        }
+        .flashcard {
+            background: #fef9e3;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #fde047;
+        }
+        .pattern-word {
+            font-weight: 800;
+            color: #b45309;
+        }
+        .meaning-vn {
+            color: #475569;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .exercise-list {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .question-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 16px;
+        }
+        .back-home {
+            background: #1e293b;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 760px) {
+            .group-content { padding: 16px; }
+            .word-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="./index.html" class="back-home">← Về trang chủ từ vựng</a>
+    <div class="unit-header">
+        <h1>✈️ Unit 2: Travel & Transport</h1>
+        <p>Destination B2 – từ vựng chuyên sâu + thực hành 30 câu</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="theory">📘 Lý thuyết chi tiết</button>
+        <button class="tab-btn" data-tab="practice">✍️ Luyện tập (30 câu)</button>
+    </div>
+
+    <!-- ================= TAB LÝ THUYẾT ================= -->
+    <div id="theoryTab" class="tab-pane active-pane">
+        
+        <!-- NHÓM 1: TOPIC VOCABULARY IN CONTRAST (Học trước) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #3b82f6;">
+                <h2>📖 Nhóm 1: Topic vocabulary in contrast <span class="badge-group">Tránh nhầm lẫn các từ sau</span></h2>
+            </div>
+            <div class="group-content">
+                <p style="margin-bottom: 20px;"><strong>Cách học:</strong> Tạo câu so sánh đơn giản với các cặp dễ nhầm.</p>
+                <div class="contrast-grid">
+                    <div class="contrast-card" style="border-left-color: #ef4444;">
+                        <strong>🚢 voyage / journey / trip / travel / excursion</strong>
+                        <div class="example">📌 I took a <strong>trip</strong> to Đà Nẵng vs a <strong>long journey</strong> across Vietnam.</div>
+                        <div class="example">📌 <strong>Voyage</strong> = chuyến đi dài bằng đường biển/vũ trụ. <strong>Excursion</strong> = chuyến đi ngắn (học tập, tham quan).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #eab308;">
+                        <strong>🎫 fare / ticket</strong>
+                        <div class="example">💡 <strong>Fare</strong> = tiền vé phương tiện công cộng (bus fare). <strong>Ticket</strong> = vé vật lý/điện tử (plane ticket).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #10b981;">
+                        <strong>🛏️ live / stay</strong>
+                        <div class="example">🏠 <strong>Live</strong> = sống lâu dài (I live in Hanoi). <strong>Stay</strong> = ở tạm (stay at a hotel).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #ec489a;">
+                        <strong>👀 view / sight</strong>
+                        <div class="example">🌅 <strong>View</strong> = quang cảnh từ một vị trí (mountain view). <strong>Sight</strong> = điểm tham quan (the sights of Paris).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #8b5cf6;">
+                        <strong>😢 miss / lose</strong>
+                        <div class="example">🚌 <strong>Miss</strong> = lỡ chuyến xe/cơ hội (miss the bus). <strong>Lose</strong> = đánh mất đồ vật (lose passport).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f97316;">
+                        <strong>🌍 earth / world / ground</strong>
+                        <div class="example">🌎 <strong>Earth</strong> = hành tinh (trái đất). <strong>World</strong> = thế giới loài người. <strong>Ground</strong> = mặt đất.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #06b6d4;">
+                        <strong>📏 length / distance / area / territory</strong>
+                        <div class="example">📐 <strong>Length</strong> = độ dài. <strong>Distance</strong> = khoảng cách. <strong>Area</strong> = khu vực, diện tích. <strong>Territory</strong> = lãnh thổ.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #64748b;">
+                        <strong>📅 season / period</strong>
+                        <div class="example">🌸 <strong>Season</strong> = mùa (summer season). <strong>Period</strong> = giai đoạn lịch sử/thời gian.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #a855f7;">
+                        <strong>📦 take / bring / go</strong>
+                        <div class="example">🎒 <strong>Take</strong> = mang đi (từ đây đi nơi khác). <strong>Bring</strong> = mang đến (từ nơi khác đến đây). <strong>Go</strong> = đi.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f43f5e;">
+                        <strong>🧭 border / edge / line</strong>
+                        <div class="example">🗺️ <strong>Border</strong> = biên giới quốc gia. <strong>Edge</strong> = rìa, mép. <strong>Line</strong> = đường kẻ, ranh giới trừu tượng.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 2 : PHRASAL VERBS + PHRASES (xanh, có nghĩa) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #10b981;">
+                <h2>⛵ Nhóm 2: Phrasal verbs + Phrases & collocations <span class="badge-group">Học theo Timeline chuyến đi</span></h2>
+            </div>
+            <div class="group-content">
+                <p><strong>Cách học:</strong> Xây dựng timeline chuyến đi – gắn từ vào từng giai đoạn.</p>
+                <div class="timeline-stage">
+                    <h3>🧳 1. Chuẩn bị & khởi hành</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">set out / set off</span> – bắt đầu hành trình <br> <span class="phrasal-term">make for</span> – đi về hướng nào đó <br> <span class="phrasal-term">go away</span> – đi nghỉ xa nhà <br> <span class="phrasal-term">plan your route</span> – lên lộ trình <br> <span class="phrasal-term">in advance</span> – trước (đặt trước) <br> <span class="phrasal-term">go straight ahead</span> – đi thẳng về phía trước</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>✈️ 2. Di chuyển & check-in</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">check in</span> – làm thủ tục (sân bay/khách sạn) <br> <span class="phrasal-term">take off</span> – cất cánh <br> <span class="phrasal-term">pick up</span> – đón ai đó lên xe <br> <span class="phrasal-term">pull in</span> – tấp vào lề (xe cộ) <br> <span class="phrasal-term">take a route</span> – đi theo một lộ trình <br> <span class="phrasal-term">at full speed</span> – với tốc độ tối đa <br> <span class="phrasal-term">a change of direction</span> – sự thay đổi hướng đi</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>📸 3. Tham quan & trải nghiệm</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">go sightseeing</span> – đi tham quan (ngắm cảnh) <br> <span class="phrasal-term">see the sights</span> – tham quan các danh lam thắng cảnh <br> <span class="phrasal-term">turn round</span> – quay đầu lại <br> <span class="phrasal-term">go on a tour of the city</span> – tham quan thành phố theo tour <br> <span class="phrasal-term">take a trip to the beach</span> – thực hiện chuyến đi đến bãi biển <br> <span class="phrasal-term">have an accident</span> – gặp tai nạn / by accident: tình cờ</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>🏠 4. Kết thúc & trở về</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">check out</span> – trả phòng khách sạn <br> <span class="phrasal-term">get back</span> – quay trở về <br> <span class="phrasal-term">see off</span> – tiễn ai lên đường <br> <span class="phrasal-term">drop off</span> – thả ai xuống xe <br> <span class="phrasal-term">find your way back</span> – tìm đường về <br> <span class="phrasal-term">on the way home</span> – trên đường về nhà <br> <span class="phrasal-term">go all the way to the airport</span> – đi cả chặng đường dài tới sân bay</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 3: WORD PATTERNS (có nghĩa Việt) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #a855f7;">
+                <h2>🔗 Nhóm 3: Word patterns <span class="badge-group">Giới từ & cấu trúc cố định</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">arrive ___ a place</span> → arrive IN (thành phố/quốc gia) / arrive AT (nhà ga/sân bay) <span class="meaning-vn">(đến nơi)</span></div>
+                    <div class="flashcard"><span class="pattern-word">afraid ___ doing</span> → afraid OF <span class="meaning-vn">(sợ làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">keen ___ sth / keen ___ do</span> → keen ON sth / keen TO do <span class="meaning-vn">(ham thích/ mong muốn)</span></div>
+                    <div class="flashcard"><span class="pattern-word">differ ___ sb/sth</span> → differ FROM <span class="meaning-vn">(khác với)</span></div>
+                    <div class="flashcard"><span class="pattern-word">invite sb ___ do</span> → invite someone TO DO <span class="meaning-vn">(mời ai làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">arrange ___ sb to do</span> → arrange FOR sb to do <span class="meaning-vn">(sắp xếp để ai làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">think ___ sth/sb</span> → think OF / ABOUT <span class="meaning-vn">(nghĩ về)</span></div>
+                    <div class="flashcard"><span class="pattern-word">live ___ a place / live ___ money</span> → live IN/AT ; live ON money <span class="meaning-vn">(sống ở / sống dựa vào tiền)</span></div>
+                    <div class="flashcard"><span class="pattern-word">regret ___ you that...</span> → regret TO tell (lấy làm tiếc phải nói) / regret DOING (hối hận đã làm) <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">continue ___ doing / continue ___ sth</span> → continue DOING / continue WITH sth <span class="meaning-vn">(tiếp tục làm/tiếp tục với việc gì)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 4: WORD FORMATION (siêu chi tiết) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>📝 Nhóm 4: Word formation <span class="badge-group">Lưu ý các từ đồng nghĩa, trái nghĩa</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="word-grid">
+                    <div class="word-card"><div class="main-word">arrange</div><div class="ipa">/əˈreɪndʒ/</div><div class="meaning">📖 sắp xếp, thu xếp</div><div class="example-sentence">➤ They arranged a private tour to Hạ Long Bay.</div><div class="colloc">🔹 arrange a meeting / arrange accommodation (sắp xếp chỗ ở)</div><div class="word-forms">🔸 arrangement (n) – The travel arrangement was perfect.<br>🔸 rearranged (adj) – The schedule was rearranged.</div><div class="syn-ant">🔄 đồng nghĩa: organize, plan ❌ trái nghĩa: disarrange, disturb</div></div>
+                    <div class="word-card"><div class="main-word">arrive</div><div class="ipa">/əˈraɪv/</div><div class="meaning">📖 đến nơi</div><div class="example-sentence">➤ We arrived at the airport two hours early.</div><div class="colloc">🔹 arrive on time (đến đúng giờ) / arrive at a decision (đi đến quyết định)</div><div class="word-forms">🔸 arrival (n) – His arrival was delayed.<br>🔸 arriving (hiếm)</div><div class="syn-ant">🔄 reach, get to ❌ depart, leave</div></div>
+                    <div class="word-card"><div class="main-word">differ</div><div class="ipa">/ˈdɪfər/</div><div class="meaning">📖 khác nhau</div><div class="example-sentence">➤ Customs differ from country to country.</div><div class="colloc">🔹 differ dramatically / differ in opinion (khác quan điểm)</div><div class="word-forms">🔸 difference (n) – There’s no difference.<br>🔸 different (adj) – completely different.<br>🔸 differently (adv) – think differently.</div><div class="syn-ant">🔄 vary, contrast ❌ resemble, agree</div></div>
+                    <div class="word-card"><div class="main-word">recognise</div><div class="ipa">/ˈrekəɡnaɪz/</div><div class="meaning">📖 nhận ra, công nhận</div><div class="example-sentence">➤ I recognised the tour guide from last year.</div><div class="colloc">🔹 recognise a face / officially recognise (công nhận chính thức)</div><div class="word-forms">🔸 recognition (n) – won international recognition.<br>🔸 recognisable (adj) – easily recognisable.<br>🔸 unrecognisable (adj)</div><div class="syn-ant">🔄 identify, acknowledge ❌ ignore, overlook</div></div>
+                    <div class="word-card"><div class="main-word">inhabit</div><div class="ipa">/ɪnˈhæbɪt/</div><div class="meaning">📖 sinh sống, cư trú (động vật/người)</div><div class="example-sentence">➤ The island is inhabited by seabirds.</div><div class="colloc">🔹 densely inhabited (đông dân cư) / uninhabited island</div><div class="word-forms">🔸 inhabitant (n) – local inhabitants.<br>🔸 inhabited/uninhabited (adj)</div><div class="syn-ant">🔄 dwell, live in ❌ uninhabited, deserted</div></div>
+                    <div class="word-card"><div class="main-word">tour</div><div class="ipa">/tʊər/</div><div class="meaning">📖 chuyến du lịch, đi tham quan</div><div class="example-sentence">➤ We took a tour of ancient temples.</div><div class="colloc">🔹 guided tour (tour có hướng dẫn) / tour operator (công ty lữ hành)</div><div class="word-forms">🔸 tourism (n) – mass tourism.<br>🔸 tourist (n) – tourist attraction.<br>🔸 touristic (adj) (khu vực du lịch)</div><div class="syn-ant">🔄 excursion, journey ❌ (không phổ biến)</div></div>
+                    <div class="word-card"><div class="main-word">direct</div><div class="ipa">/daɪˈrekt/</div><div class="meaning">📖 chỉ đường; trực tiếp</div><div class="example-sentence">➤ Can you direct me to the station?</div><div class="colloc">🔹 direct flight (chuyến bay thẳng) / direct influence</div><div class="word-forms">🔸 direction (n) – opposite direction.<br>🔸 director (n) – managing director.<br>🔸 indirectly (adv)</div><div class="syn-ant">🔄 guide, lead ❌ indirect, misdirect</div></div>
+                    <div class="word-card"><div class="main-word">broad</div><div class="ipa">/brɔːd/</div><div class="meaning">📖 rộng (nghĩa đen/bóng)</div><div class="example-sentence">➤ a broad range of travel options</div><div class="colloc">🔹 broad daylight (giữa ban ngày) / broad accent (giọng đặc vùng)</div><div class="word-forms">🔸 breadth (n) – breadth of knowledge.<br>🔸 broadly (adv) – broadly speaking.</div><div class="syn-ant">🔄 wide, extensive ❌ narrow, limited</div></div>
+                    <div class="word-card"><div class="main-word">culture</div><div class="ipa">/ˈkʌltʃər/</div><div class="meaning">📖 văn hóa</div><div class="example-sentence">➤ Learning about local culture enriches travel.</div><div class="colloc">🔹 cultural diversity (đa dạng văn hóa) / cultured person (người có văn hóa)</div><div class="word-forms">🔸 cultural (adj) – cultural heritage.<br>🔸 culturally (adv) – culturally rich.</div><div class="syn-ant">🔄 civilization, customs ❌ (không phổ biến)</div></div>
+                    <div class="word-card"><div class="main-word">world</div><div class="ipa">/wɜːrld/</div><div class="meaning">📖 thế giới</div><div class="example-sentence">➤ They traveled around the world.</div><div class="colloc">🔹 world-famous (nổi tiếng thế giới) / world travel</div><div class="word-forms">🔸 worldwide (adj/adv) – a worldwide network.</div><div class="syn-ant">🔄 earth, globe ❌ (không)</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TAB LUYỆN TẬP (30 CÂU) ================= -->
+    <div id="practiceTab" class="tab-pane">
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #3b82f6;">
+                <h2>✍️ Bài tập từ vựng Unit 2 (30 câu)</h2>
+            </div>
+            <div class="group-content exercise-list">
+                <form id="vocabQuiz">
+                    <h3>Part 1: Điền từ vào chỗ trống (phrasal verbs & word patterns)</h3>
+                    <div class="question-item">1. Our flight will <u>__________</u> off at 9 a.m. → <input type="text" name="q1" placeholder="đáp án"></div>
+                    <div class="question-item">2. Remember to check <u>__________</u> of the hotel before noon. → <input type="text" name="q2"></div>
+                    <div class="question-item">3. She is afraid <u>__________</u> flying, so she prefers traveling by train. → <input type="text" name="q3"></div>
+                    <div class="question-item">4. My brother is keen <u>__________</u> visiting historical sites. → <input type="text" name="q4"></div>
+                    <div class="question-item">5. The two tours differ <u>__________</u> each other in price. → <input type="text" name="q5"></div>
+                    <div class="question-item">6. We arrived <u>__________</u> the station just before the train left. → <input type="text" name="q6"></div>
+                    <div class="question-item">7. He arranged <u>__________</u> his friend to pick us up. → <input type="text" name="q7"></div>
+                    <div class="question-item">8. We plan to set <u>__________</u> at sunrise tomorrow. → <input type="text" name="q8"></div>
+                    <div class="question-item">9. The bus pulled <u>__________</u> to let passengers off. → <input type="text" name="q9"></div>
+                    <div class="question-item">10. Can you drop me <u>__________</u> at the airport? → <input type="text" name="q10"></div>
+
+                    <h3>Part 2: Chọn đáp án đúng (A/B/C) – từ vựng contrast</h3>
+                    <div class="question-item">11. They went on a three-day _______ to the mountains. (A) voyage (B) trip (C) journey → <input type="text" name="q11" size="5"></div>
+                    <div class="question-item">12. The bus _______ to London is £15. (A) fare (B) ticket (C) fee → <input type="text" name="q12"></div>
+                    <div class="question-item">13. Don’t _______ your passport! (A) miss (B) lose (C) forget → <input type="text" name="q13"></div>
+                    <div class="question-item">14. The _______ from the hotel rooftop was amazing. (A) sight (B) view (C) scene → <input type="text" name="q14"></div>
+                    <div class="question-item">15. We will _______ in a lovely resort for a week. (A) live (B) stay (C) remain → <input type="text" name="q15"></div>
+                    <div class="question-item">16. They took a guided _______ of the old quarter. (A) tour (B) travel (C) voyage → <input type="text" name="q16"></div>
+                    <div class="question-item">17. The _______ limit on this road is 50 km/h. (A) speed (B) fast (C) rate → <input type="text" name="q17"></div>
+                    <div class="question-item">18. He lost his _______ and got lost. (A) road (B) way (C) route → <input type="text" name="q18"></div>
+
+                    <h3>Part 3: Word formation (điền dạng đúng)</h3>
+                    <div class="question-item">19. The sudden _______ (arrive) of the train surprised everyone. → <input type="text" name="q19"></div>
+                    <div class="question-item">20. There is a clear _______ (differ) between the two packages. → <input type="text" name="q20"></div>
+                    <div class="question-item">21. She made a quick _______ (arrange) with the travel agency. → <input type="text" name="q21"></div>
+                    <div class="question-item">22. The island is _______ (inhabit) only by birds. → <input type="text" name="q22"></div>
+                    <div class="question-item">23. Ha Long Bay is a _______ (world) famous tourist attraction. → <input type="text" name="q23"></div>
+                    <div class="question-item">24. The _______ (recognise) of his hard work came late. → <input type="text" name="q24"></div>
+                    <div class="question-item">25. They want to promote cultural _______ (diverse) in tourism. → <input type="text" name="q25"></div>
+                    <div class="question-item">26. He gave us _______ (direct) to the nearest hotel. → <input type="text" name="q26"></div>
+                    <div class="question-item">27. The _______ (broad) of his knowledge impressed the guide. → <input type="text" name="q27"></div>
+                    <div class="question-item">28. Tourism is a major source of income for local _______ (inhabit). → <input type="text" name="q28"></div>
+                    <div class="question-item">29. The new road will _______ (direct) connect the two towns. → <input type="text" name="q29"></div>
+                    <div class="question-item">30. They offer _______ (culture) tours to learn about traditions. → <input type="text" name="q30"></div>
+
+                    <button type="button" id="checkAnswersBtn" style="background:#059669; color:white; border:none; padding:12px 28px; border-radius:40px; font-weight:bold; margin-top:20px;">✅ Kiểm tra đáp án</button>
+                    <div id="resultArea" style="margin-top: 20px; font-weight: bold; background: #e6f7f5; padding: 16px; border-radius: 24px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panes.forEach(pane => pane.classList.remove('active-pane'));
+            if(tabId === 'theory') document.getElementById('theoryTab').classList.add('active-pane');
+            else document.getElementById('practiceTab').classList.add('active-pane');
+        });
+    });
+
+    // Đáp án bài tập
+    const answers = {
+        q1:"take", q2:"out", q3:"of", q4:"on", q5:"from", q6:"at", q7:"for", q8:"off", q9:"in", q10:"off",
+        q11:"B", q12:"A", q13:"B", q14:"B", q15:"B", q16:"A", q17:"A", q18:"B",
+        q19:"arrival", q20:"difference", q21:"arrangement", q22:"inhabited", q23:"worldwide", q24:"recognition",
+        q25:"diversity", q26:"directions", q27:"breadth", q28:"inhabitants", q29:"directly", q30:"cultural"
+    };
+    document.getElementById('checkAnswersBtn').addEventListener('click', function(){
+        let score = 0;
+        let total = 30;
+        for(let i=1; i<=30; i++){
+            let userAns = document.querySelector(`[name="q${i}"]`)?.value.trim().toLowerCase();
+            let correct = answers[`q${i}`].toLowerCase();
+            if(userAns === correct) score++;
+        }
+        document.getElementById('resultArea').innerHTML = `🎉 Bạn đã trả lời đúng ${score}/${total} câu. ${score >= 25 ? 'Xuất sắc!' : (score>=18 ? 'Tốt, hãy xem lại phần sai.' : 'Hãy ôn lại lý thuyết nhé!')}`;
+    });
+</script>
+</body>
+</html>
