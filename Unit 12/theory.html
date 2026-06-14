@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Unit 12: The Law & Crime - Lý thuyết từ vựng chi tiết | Destination B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 30px 20px 60px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            background: #dc2626;
+            color: white;
+            box-shadow: 0 8px 18px rgba(220,38,38,0.3);
+        }
+        .tab-pane {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+        .tab-pane.active-pane {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* header & card */
+        .unit-header {
+            background: linear-gradient(125deg, #b91c1c, #ef4444);
+            border-radius: 40px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .group {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .group-header {
+            padding: 20px 28px;
+            border-bottom: 4px solid;
+        }
+        .group-header h2 {
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge-group {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .group-content {
+            padding: 24px 28px;
+        }
+        /* Grid cho nhóm 1 contrast */
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .contrast-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+            border-left: 5px solid;
+            transition: all 0.2s;
+        }
+        .contrast-card strong {
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .example {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-top: 8px;
+            font-style: italic;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+        }
+        /* word grid */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .word-card {
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 18px;
+            border-left: 6px solid #eab308;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .word-card .main-word {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #854d0e;
+            margin-bottom: 4px;
+        }
+        .ipa {
+            font-family: monospace;
+            color: #475569;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .meaning {
+            font-weight: 600;
+            color: #0f172a;
+            border-left: 3px solid #facc15;
+            padding-left: 10px;
+            margin: 8px 0;
+        }
+        .example-sentence {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            color: #334155;
+        }
+        .colloc {
+            font-size: 0.85rem;
+            background: #fff1cf;
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 8px 0;
+        }
+        .word-forms {
+            background: #e6f7f5;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+        .syn-ant {
+            font-size: 0.8rem;
+            color: #1f2937;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* phrasal verb style */
+        .phrasal-red {
+            background: #fee2e2;
+            border-left: 5px solid #dc2626;
+            padding: 12px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+        .phrasal-term {
+            font-weight: 800;
+            color: #991b1b;
+            font-size: 1rem;
+        }
+        .timeline-stage {
+            margin-bottom: 28px;
+        }
+        .flashcard {
+            background: #fef9e3;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #fde047;
+        }
+        .pattern-word {
+            font-weight: 800;
+            color: #b45309;
+        }
+        .meaning-vn {
+            color: #475569;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .exercise-list {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .question-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 16px;
+        }
+        .back-home {
+            background: #1e293b;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 760px) {
+            .group-content { padding: 16px; }
+            .word-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back-home">← Về trang chủ từ vựng</a>
+    <div class="unit-header">
+        <h1>⚖️ Unit 12: The Law & Crime</h1>
+        <p>Destination B2 – từ vựng chuyên sâu: hệ thống pháp luật, tội phạm, tố tụng hình sự + thực hành 30+ câu</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="theory">📘 Lý thuyết chi tiết</button>
+        <button class="tab-btn" data-tab="practice">✍️ Luyện tập (30 câu)</button>
+    </div>
+
+    <!-- ================= TAB LÝ THUYẾT ================= -->
+    <div id="theoryTab" class="tab-pane active-pane">
+        
+        <!-- NHÓM 1: TOPIC VOCABULARY IN CONTRAST (Luật & tội phạm) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #dc2626;">
+                <h2>📖 Nhóm 1: Topic vocabulary in contrast <span class="badge-group">Phân biệt từ vựng pháp lý & tội phạm</span></h2>
+            </div>
+            <div class="group-content">
+                <p style="margin-bottom: 20px;"><strong>Cách học:</strong> Liên hệ với các vụ án, quy trình tư pháp thực tế.</p>
+                <div class="contrast-grid">
+                    <div class="contrast-card" style="border-left-color: #ef4444;"><strong>🔍 proof / evidence</strong><div class="example">📄 <strong>Proof</strong> = bằng chứng thuyết phục (kết luận). 🧾 <strong>Evidence</strong> = vật chứng, chứng cứ (tòa án).</div></div>
+                    <div class="contrast-card" style="border-left-color: #eab308;"><strong>📜 rule / law / justice / right</strong><div class="example">⚖️ <strong>Law</strong> = luật pháp. 📏 <strong>Rule</strong> = quy tắc. ⚖️ <strong>Justice</strong> = công lý. 🛡️ <strong>Right</strong> = quyền lợi.</div></div>
+                    <div class="contrast-card" style="border-left-color: #10b981;"><strong>👥 vandal / hooligan</strong><div class="example">🎨 <strong>Vandal</strong> = kẻ phá hoại tài sản. ⚽ <strong>Hooligan</strong> = côn đồ (thường liên quan bạo lực).</div></div>
+                    <div class="contrast-card" style="border-left-color: #ec489a;"><strong>🚔 suspect / arrest / charge</strong><div class="example">🔎 <strong>Suspect</strong> = nghi phạm. 🔒 <strong>Arrest</strong> = bắt giữ. 📢 <strong>Charge</strong> = buộc tội chính thức.</div></div>
+                    <div class="contrast-card" style="border-left-color: #8b5cf6;"><strong>👨‍⚖️ judge / jury</strong><div class="example">🏛️ <strong>Judge</strong> = thẩm phán. 👥 <strong>Jury</strong> = bồi thẩm đoàn.</div></div>
+                    <div class="contrast-card" style="border-left-color: #f97316;"><strong>⛓️ sentence / imprison</strong><div class="example">📝 <strong>Sentence</strong> = tuyên án. 🚪 <strong>Imprison</strong> = bỏ tù.</div></div>
+                    <div class="contrast-card" style="border-left-color: #06b6d4;"><strong>⚖️ suspect / accused</strong><div class="example">❓ <strong>Suspect</strong> = người bị tình nghi. 🧑‍⚖️ <strong>Accused</strong> = bị cáo (chính thức tại tòa).</div></div>
+                    <div class="contrast-card" style="border-left-color: #64748b;"><strong>🏛️ prosecute / persecute</strong><div class="example">⚖️ <strong>Prosecute</strong> = truy tố. 🔥 <strong>Persecute</strong> = ngược đãi, khủng bố (vì lý do chính trị/tôn giáo).</div></div>
+                    <div class="contrast-card" style="border-left-color: #a855f7;"><strong>👮 innocent / guilty</strong><div class="example">😇 <strong>Innocent</strong> = vô tội. 😈 <strong>Guilty</strong> = có tội.</div></div>
+                    <div class="contrast-card" style="border-left-color: #f43f5e;"><strong>📑 decision / verdict</strong><div class="example">🤔 <strong>Decision</strong> = quyết định (nói chung). 🧑‍⚖️ <strong>Verdict</strong> = phán quyết của tòa.</div></div>
+                    <div class="contrast-card" style="border-left-color: #84cc16;"><strong>💀 capital punishment / corporal punishment</strong><div class="example">⚰️ <strong>Capital punishment</strong> = tử hình. 📏 <strong>Corporal punishment</strong> = trừng phạt thân thể (đòn roi).</div></div>
+                    <div class="contrast-card" style="border-left-color: #d946ef;"><strong>👀 witness / bystander</strong><div class="example">📸 <strong>Witness</strong> = nhân chứng (có thể cung cấp lời khai). 🚶 <strong>Bystander</strong> = người chứng kiến (người ngoài cuộc).</div></div>
+                    <div class="contrast-card" style="border-left-color: #0ea5e9;"><strong>💥 commit / break</strong><div class="example">🔪 <strong>Commit a crime</strong> = phạm tội. 🚫 <strong>Break the law</strong> = vi phạm pháp luật.</div></div>
+                    <div class="contrast-card" style="border-left-color: #f59e0b;"><strong>🥷 robber / burglar / thief</strong><div class="example">🔫 <strong>Robber</strong> = cướp có vũ khí. 🏠 <strong>Burglar</strong> = trộm đột nhập. 🕵️ <strong>Thief</strong> = kẻ trộm nói chung.</div></div>
+                    <div class="contrast-card" style="border-left-color: #14b8a6;"><strong>👨‍💼 lawyer / solicitor</strong><div class="example">⚖️ <strong>Lawyer</strong> = luật sư (nói chung). 📄 <strong>Solicitor</strong> = luật sư tư vấn (Anh).</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 2: PHRASAL VERBS (pháp lý, tội phạm) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #ef4444;">
+                <h2>💬 Nhóm 2: Phrasal verbs <span class="badge-group">Động từ ghép về điều tra, bắt giữ, thoát tội</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="timeline-stage"><h3>⛓️ 1. Hành vi phạm pháp & bắt giữ</h3>
+                    <div class="phrasal-red"><span class="phrasal-term">break out</span> – vượt ngục <br>
+                    <span class="phrasal-term">hold up</span> – cướp (bằng vũ lực) / làm gián đoạn <br>
+                    <span class="phrasal-term">chase after</span> – đuổi theo để bắt <br>
+                    <span class="phrasal-term">hand in</span> – nộp (đồ cho cơ quan chức năng) </div>
+                </div>
+                <div class="timeline-stage"><h3>⚖️ 2. Điều tra & bằng chứng</h3>
+                    <div class="phrasal-red"><span class="phrasal-term">look into</span> – điều tra <br>
+                    <span class="phrasal-term">come forward</span> – tình nguyện cung cấp thông tin (nhân chứng) <br>
+                    <span class="phrasal-term">take down</span> – ghi chép lại lời khai </div>
+                </div>
+                <div class="timeline-stage"><h3>🏛️ 3. Hình phạt & miễn tội</h3>
+                    <div class="phrasal-red"><span class="phrasal-term">let off</span> – tha bổng, phạt nhẹ <br>
+                    <span class="phrasal-term">get away with</span> – thoát tội mà không bị trừng phạt <br>
+                    <span class="phrasal-term">bring in</span> – ban hành (luật mới) </div>
+                </div>
+                <div class="timeline-stage"><h3>💣 4. Bạo lực & lừa đảo</h3>
+                    <div class="phrasal-red"><span class="phrasal-term">go off</span> – nổ (súng, bom) <br>
+                    <span class="phrasal-term">take in</span> – lừa ai tin vào điều dối trá <br>
+                    <span class="phrasal-term">make off</span> – trốn thoát nhanh chóng </div>
+                </div>
+                <div class="timeline-stage"><h3>🛑 5. Nhượng bộ</h3>
+                    <div class="phrasal-red"><span class="phrasal-term">back down</span> – rút lại yêu sách, nhượng bộ </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 3: PHRASES & COLLOCATIONS (legal English) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f59e0b;">
+                <h2>📚 Nhóm 3: Phrases & collocations <span class="badge-group">Cụm từ cố định về tội phạm & luật pháp</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">on account of; take into account</span> – xét đến, vì lý do gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">take advantage of sb/sth</span> – lợi dụng ai/cái gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">be to blame for sth / take the blame</span> – chịu trách nhiệm/đổ lỗi <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">do/cause damage to sth</span> – gây thiệt hại <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">at fault / find fault with sth</span> – có lỗi / bắt bẻ <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">have the/no intention of doing</span> – có/không có ý định <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">make a mistake / by mistake</span> – phạm sai lầm / do nhầm lẫn <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in order to / put sth in order</span> – để làm gì / sắp xếp trật tự <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">give/ask for permission</span> – cho phép / xin phép <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">do sth on purpose</span> – cố ý làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">reason why / reason for / reason with sb</span> – lý do / thuyết phục ai <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">find a solution to sth</span> – tìm giải pháp cho vấn đề <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">do wrong / go wrong</span> – làm sai / trục trặc <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 4: WORD PATTERNS (cấu trúc giới từ - legal) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #10b981;">
+                <h2>🔗 Nhóm 4: Word patterns <span class="badge-group">Cấu trúc ngữ pháp tố tụng & tội phạm</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">accuse sb of sth/doing</span> – buộc tội ai về việc gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">arrest sb for sth/doing</span> – bắt giữ vì tội gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">charge sb with sth</span> – truy tố ai tội gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">guilty of sth/doing</span> – có tội về việc gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">deny sth/doing</span> – phủ nhận điều gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">claim to be/do; claim that</span> – khẳng định, tuyên bố <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">doubt sth / doubt that</span> – nghi ngờ <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">forgive sb for sth/doing</span> – tha thứ cho ai về việc gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">threaten to do / threaten sb with sth</span> – đe dọa làm gì/ bằng cái gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">refuse to do sth</span> – từ chối làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">respect sth / respect sb for doing</span> – tôn trọng <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">legal (for sb) to do</span> – hợp pháp để làm gì <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 5: WORD FORMATION (từ loại pháp lý) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>📝 Nhóm 5: Word formation <span class="badge-group">Từ phái sinh về tội phạm, luật sư, tù tội</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="word-grid">
+                    <div class="word-card"><div class="main-word">accuse</div><div class="ipa">/əˈkjuːz/</div><div class="meaning">⚖️ buộc tội</div><div class="example-sentence">➤ The prosecutor accused him of fraud.</div><div class="word-forms">🔸 accused (n) – bị cáo<br>🔸 accusation (n) – lời buộc tội</div></div>
+                    <div class="word-card"><div class="main-word">honest</div><div class="ipa">/ˈɒnɪst/</div><div class="meaning">🙏 trung thực</div><div class="example-sentence">➤ An honest witness is crucial for justice.</div><div class="word-forms">🔸 dishonest (adj) – không trung thực<br>🔸 honesty (n) – sự trung thực</div></div>
+                    <div class="word-card"><div class="main-word">prison</div><div class="ipa">/ˈprɪzn/</div><div class="meaning">🏛️ nhà tù</div><div class="example-sentence">➤ He was sent to prison for armed robbery.</div><div class="word-forms">🔸 prisoner (n) – tù nhân<br>🔸 imprisonment (n) – sự bỏ tù</div></div>
+                    <div class="word-card"><div class="main-word">addict</div><div class="ipa">/ˈædɪkt/</div><div class="meaning">🧪 người nghiện</div><div class="example-sentence">➤ The addict committed theft to buy drugs.</div><div class="word-forms">🔸 addicted (adj) – nghiện<br>🔸 addiction (n) – sự nghiện<br>🔸 addictive (adj) – gây nghiện</div></div>
+                    <div class="word-card"><div class="main-word">investigate</div><div class="ipa">/ɪnˈvestɪɡeɪt/</div><div class="meaning">🔍 điều tra</div><div class="example-sentence">➤ Police investigate the murder case.</div><div class="word-forms">🔸 investigation (n) – cuộc điều tra<br>🔸 investigator (n) – điều tra viên</div></div>
+                    <div class="word-card"><div class="main-word">prove</div><div class="ipa">/pruːv/</div><div class="meaning">✅ chứng minh</div><div class="example-sentence">➤ The evidence proved his innocence.</div><div class="word-forms">🔸 proof (n) – bằng chứng<br>🔸 unproven (adj) – chưa được chứng minh</div></div>
+                    <div class="word-card"><div class="main-word">convict</div><div class="ipa">/kənˈvɪkt/</div><div class="meaning">📢 kết án</div><div class="example-sentence">➤ The jury convicted him of murder.</div><div class="word-forms">🔸 conviction (n) – sự kết án<br>🔸 convicted (adj) – bị kết án</div></div>
+                    <div class="word-card"><div class="main-word">law</div><div class="ipa">/lɔː/</div><div class="meaning">⚖️ luật pháp</div><div class="example-sentence">➤ Breaking the law leads to punishment.</div><div class="word-forms">🔸 lawyer (n) – luật sư<br>🔸 lawful (adj) – hợp pháp<br>🔸 unlawful (adj) – bất hợp pháp</div></div>
+                    <div class="word-card"><div class="main-word">rob</div><div class="ipa">/rɒb/</div><div class="meaning">🔫 cướp</div><div class="example-sentence">➤ They robbed a bank yesterday.</div><div class="word-forms">🔸 robbery (n) – vụ cướp<br>🔸 robber (n) – kẻ cướp</div></div>
+                    <div class="word-card"><div class="main-word">crime</div><div class="ipa">/kraɪm/</div><div class="meaning">🔪 tội ác</div><div class="example-sentence">➤ Crime rates have increased.</div><div class="word-forms">🔸 criminal (n/adj) – tội phạm / thuộc về tội phạm</div></div>
+                    <div class="word-card"><div class="main-word">murder</div><div class="ipa">/ˈmɜːdə/</div><div class="meaning">💀 giết người</div><div class="example-sentence">➤ He was charged with murder.</div><div class="word-forms">🔸 murderer (n) – kẻ sát nhân</div></div>
+                    <div class="word-card"><div class="main-word">secure</div><div class="ipa">/sɪˈkjʊər/</div><div class="meaning">🔒 an toàn</div><div class="example-sentence">➤ The prison is highly secure.</div><div class="word-forms">🔸 insecure (adj) – không an toàn<br>🔸 security (n) – an ninh</div></div>
+                    <div class="word-card"><div class="main-word">evident</div><div class="ipa">/ˈevɪdənt/</div><div class="meaning">👁️ rõ ràng</div><div class="example-sentence">➤ It was evident that he lied.</div><div class="word-forms">🔸 evidence (n) – chứng cứ<br>🔸 evidently (adv) – rõ ràng</div></div>
+                    <div class="word-card"><div class="main-word">offence</div><div class="ipa">/əˈfens/</div><div class="meaning">⚠️ hành vi phạm tội</div><div class="example-sentence">➤ Speeding is a minor offence.</div><div class="word-forms">🔸 offend (v) – xúc phạm/phạm tội<br>🔸 offender (n) – người vi phạm</div></div>
+                    <div class="word-card"><div class="main-word">theft</div><div class="ipa">/θeft/</div><div class="meaning">👛 hành vi trộm cắp</div><div class="example-sentence">➤ The theft occurred at midnight.</div><div class="word-forms">🔸 thief (n) – kẻ trộm</div></div>
+                    <div class="word-card"><div class="main-word">forge</div><div class="ipa">/fɔːdʒ/</div><div class="meaning">🖋️ giả mạo</div><div class="example-sentence">➤ He forged the signature.</div><div class="word-forms">🔸 forgery (n) – tội giả mạo<br>🔸 forger (n) – kẻ làm giả</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TAB LUYỆN TẬP ================= -->
+    <div id="practiceTab" class="tab-pane">
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #dc2626;">
+                <h2>✍️ Bài tập từ vựng Unit 12 (Law & Crime)</h2>
+            </div>
+            <div class="group-content exercise-list">
+                <form id="lawQuiz">
+                    <h3>⚖️ Part A: Chọn từ đúng (topic vocabulary in contrast)</h3>
+                    <div class="question-item">1. The police found crucial ______ at the crime scene. (proof / evidence) → <input type="text" name="q1" size="15"></div>
+                    <div class="question-item">2. The ______ announced the verdict after three hours. (judge / jury) → <input type="text" name="q2"></div>
+                    <div class="question-item">3. The suspect was ______ with first-degree murder. (arrested / charged) → <input type="text" name="q3"></div>
+                    <div class="question-item">4. He was found ______ of embezzlement. (guilty / innocent) → <input type="text" name="q4"></div>
+                    <div class="question-item">5. A ______ broke into the house and stole jewelry. (robber / burglar) → <input type="text" name="q5"></div>
+                    <div class="question-item">6. The ______ gave a detailed account of the accident. (bystander / witness) → <input type="text" name="q6"></div>
+
+                    <h3>🔫 Part B: Phrasal verbs (điền giới từ/trợ từ)</h3>
+                    <div class="question-item">7. Two prisoners managed to break ______ of the maximum-security jail. (out / off) → <input type="text" name="q7"></div>
+                    <div class="question-item">8. The detective promised to look ______ the mysterious case. (into / over) → <input type="text" name="q8"></div>
+                    <div class="question-item">9. The robber tried to hold ______ a convenience store. (up / out) → <input type="text" name="q9"></div>
+                    <div class="question-item">10. Many thought he would get ______ with the crime, but justice prevailed. (away / off) → <input type="text" name="q10"></div>
+                    <div class="question-item">11. The witness was afraid to come ______ and testify. (forward / down) → <input type="text" name="q11"></div>
+                    <div class="question-item">12. The judge decided to let the teenager ______ with a warning. (off / out) → <input type="text" name="q12"></div>
+
+                    <h3>⚙️ Part C: Collocations & phrases (hoàn thành cụm từ)</h3>
+                    <div class="question-item">13. The scandal did serious ______ to his reputation. (damage / fault) → <input type="text" name="q13"></div>
+                    <div class="question-item">14. He had no ______ of committing the crime; it was an accident. (intention / purpose) → <input type="text" name="q14"></div>
+                    <div class="question-item">15. Everyone knew the fire was started ______ purpose. (by / on) → <input type="text" name="q15"></div>
+                    <div class="question-item">16. The driver was ______ fault for the collision. (in / at) → <input type="text" name="q16"></div>
+                    <div class="question-item">17. They are trying to find a ______ to the problem of cybercrime. (solution / answer) → <input type="text" name="q17"></div>
+
+                    <h3>📝 Part D: Word formation (dùng từ trong ngoặc)</h3>
+                    <div class="question-item">18. The ______ (accuse) sat silently in the dock. → <input type="text" name="q18"></div>
+                    <div class="question-item">19. His ______ (prison) lasted for ten years. → <input type="text" name="q19"></div>
+                    <div class="question-item">20. The detective's ______ (investigate) revealed new clues. → <input type="text" name="q20"></div>
+                    <div class="question-item">21. There was no ______ (prove) that he was at the scene. → <input type="text" name="q21"></div>
+                    <div class="question-item">22. The ______ (convict) of the criminal brought relief to the victims. → <input type="text" name="q22"></div>
+                    <div class="question-item">23. It is ______ (law) to drive without a license. → <input type="text" name="q23"></div>
+                    <div class="question-item">24. The ______ (rob) happened in broad daylight. → <input type="text" name="q24"></div>
+                    <div class="question-item">25. Juvenile ______ (offend) often get a second chance. → <input type="text" name="q25"></div>
+                    <div class="question-item">26. The painting was a ______ (forge), not an original. → <input type="text" name="q26"></div>
+                    <div class="question-item">27. The police need more ______ (evident) before making an arrest. → <input type="text" name="q27"></div>
+                    <div class="question-item">28. His ______ (addict) to drugs led him to a life of crime. → <input type="text" name="q28"></div>
+                    <div class="question-item">29. The ______ (murder) received a life sentence. → <input type="text" name="q29"></div>
+                    <div class="question-item">30. We live in a neighborhood with 24-hour ______ (secure). → <input type="text" name="q30"></div>
+
+                    <button type="button" id="checkLawBtn" style="background:#b91c1c; color:white; border:none; padding:12px 28px; border-radius:40px; font-weight:bold; margin-top:20px;">⚖️ Kiểm tra đáp án</button>
+                    <div id="resultLawArea" style="margin-top: 20px; font-weight: bold; background: #fee2e2; padding: 16px; border-radius: 24px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panes.forEach(pane => pane.classList.remove('active-pane'));
+            if(tabId === 'theory') document.getElementById('theoryTab').classList.add('active-pane');
+            else document.getElementById('practiceTab').classList.add('active-pane');
+        });
+    });
+
+    // Đáp án bài tập Unit 12
+    const lawAnswers = {
+        q1:"evidence", q2:"jury", q3:"charged", q4:"guilty", q5:"burglar", q6:"witness",
+        q7:"out", q8:"into", q9:"up", q10:"away", q11:"forward", q12:"off",
+        q13:"damage", q14:"intention", q15:"on", q16:"at", q17:"solution",
+        q18:"accused", q19:"imprisonment", q20:"investigation", q21:"proof", q22:"conviction",
+        q23:"unlawful", q24:"robbery", q25:"offender", q26:"forgery", q27:"evidence",
+        q28:"addiction", q29:"murderer", q30:"security"
+    };
+    document.getElementById('checkLawBtn').addEventListener('click', function(){
+        let score = 0;
+        let total = 30;
+        for(let i=1; i<=30; i++){
+            let userAns = document.querySelector(`[name="q${i}"]`)?.value.trim().toLowerCase();
+            let correct = lawAnswers[`q${i}`].toLowerCase();
+            if(userAns === correct) score++;
+        }
+        let percent = Math.round(score/total*100);
+        let message = "";
+        if(score >= 27) message = "🏆 Xuất sắc! Bạn đã nắm vững từ vựng về Luật & Tội phạm! ⚖️👮";
+        else if(score >= 22) message = "👍 Tốt! Hãy xem lại những câu sai và học kỹ phần lý thuyết.";
+        else message = "📖 Hãy ôn lại các nhóm từ vựng phía trên và thử lại nhé!";
+        document.getElementById('resultLawArea').innerHTML = `⚖️ Kết quả: ${score}/${total} câu đúng (${percent}%). ${message}`;
+    });
+</script>
+</body>
+</html>
