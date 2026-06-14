@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Unit 8: The Media - Lý thuyết từ vựng chi tiết | Destination B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 30px 20px 60px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            background: #e11d48;
+            color: white;
+            box-shadow: 0 8px 18px rgba(225,29,72,0.3);
+        }
+        .tab-pane {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+        .tab-pane.active-pane {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* header & card */
+        .unit-header {
+            background: linear-gradient(125deg, #e11d48, #f43f5e);
+            border-radius: 40px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .group {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .group-header {
+            padding: 20px 28px;
+            border-bottom: 4px solid;
+        }
+        .group-header h2 {
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge-group {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .group-content {
+            padding: 24px 28px;
+        }
+        /* Grid cho nhóm 1 contrast */
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .contrast-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+            border-left: 5px solid;
+            transition: all 0.2s;
+        }
+        .contrast-card strong {
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .example {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-top: 8px;
+            font-style: italic;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+        }
+        /* word grid */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .word-card {
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 18px;
+            border-left: 6px solid #eab308;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .word-card .main-word {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #854d0e;
+            margin-bottom: 4px;
+        }
+        .ipa {
+            font-family: monospace;
+            color: #475569;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .meaning {
+            font-weight: 600;
+            color: #0f172a;
+            border-left: 3px solid #facc15;
+            padding-left: 10px;
+            margin: 8px 0;
+        }
+        .example-sentence {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            color: #334155;
+        }
+        .colloc {
+            font-size: 0.85rem;
+            background: #fff1cf;
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 8px 0;
+        }
+        .word-forms {
+            background: #e6f7f5;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+        .syn-ant {
+            font-size: 0.8rem;
+            color: #1f2937;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* phrasal verb style */
+        .phrasal-blue {
+            background: #ffe4e8;
+            border-left: 5px solid #e11d48;
+            padding: 12px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+        .phrasal-term {
+            font-weight: 800;
+            color: #9f1239;
+            font-size: 1rem;
+        }
+        .timeline-stage {
+            margin-bottom: 28px;
+        }
+        .flashcard {
+            background: #fef9e3;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #fde047;
+        }
+        .pattern-word {
+            font-weight: 800;
+            color: #b45309;
+        }
+        .meaning-vn {
+            color: #475569;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .exercise-list {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .question-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 16px;
+        }
+        .back-home {
+            background: #1e293b;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 760px) {
+            .group-content { padding: 16px; }
+            .word-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back-home">← Về trang chủ từ vựng</a>
+    <div class="unit-header">
+        <h1>📺 Unit 8: The Media</h1>
+        <p>Destination B2 – từ vựng chuyên sâu: báo chí, truyền thông, truyền hình, xuất bản + thực hành 30+ câu</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="theory">📘 Lý thuyết chi tiết</button>
+        <button class="tab-btn" data-tab="practice">✍️ Luyện tập (30 câu)</button>
+    </div>
+
+    <!-- ================= TAB LÝ THUYẾT ================= -->
+    <div id="theoryTab" class="tab-pane active-pane">
+        
+        <!-- NHÓM 1: TOPIC VOCABULARY IN CONTRAST -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #e11d48;">
+                <h2>📖 Nhóm 1: Topic vocabulary in contrast <span class="badge-group">Phân biệt từ về truyền thông & báo chí</span></h2>
+            </div>
+            <div class="group-content">
+                <p style="margin-bottom: 20px;"><strong>Cách học:</strong> Liên hệ với các chương trình tin tức, báo đài hằng ngày.</p>
+                <div class="contrast-grid">
+                    <div class="contrast-card" style="border-left-color: #ef4444;">
+                        <strong>🚫 deny / refuse</strong>
+                        <div class="example">🙅 <strong>Deny</strong> = phủ nhận (sự thật). ❌ <strong>Refuse</strong> = từ chối (làm gì).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #eab308;">
+                        <strong>🎤 talk show / quiz show / game show</strong>
+                        <div class="example">💬 <strong>Talk show</strong> = trò chuyện. ❓ <strong>Quiz show</strong> = đố vui kiến thức. 🎮 <strong>Game show</strong> = trò chơi truyền hình.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #10b981;">
+                        <strong>📰 press / media</strong>
+                        <div class="example">🖨️ <strong>Press</strong> = báo chí (nói chung). 📱 <strong>Media</strong> = truyền thông (bao gồm TV, internet, báo).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #ec489a;">
+                        <strong>🤝 agree / accept</strong>
+                        <div class="example">👍 <strong>Agree</strong> = đồng ý (quan điểm). 📦 <strong>Accept</strong> = chấp nhận (lời đề nghị, sự thật).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #8b5cf6;">
+                        <strong>🎙️ announcer / commentator</strong>
+                        <div class="example">📢 <strong>Announcer</strong> = người xướng ngôn (đọc tin). 🏈 <strong>Commentator</strong> = bình luận viên (thể thao, sự kiện).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f97316;">
+                        <strong>📺 programme / program</strong>
+                        <div class="example">🇬🇧 <strong>Programme</strong> (Anh) = chương trình TV. 🇺🇸 <strong>Program</strong> (Mỹ) = chương trình máy tính.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #06b6d4;">
+                        <strong>📰 headline / heading</strong>
+                        <div class="example">🔥 <strong>Headline</strong> = tiêu đề báo (lớn, giật gân). 📑 <strong>Heading</strong> = tiêu đề mục, đoạn văn.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #64748b;">
+                        <strong>📰 tabloid / broadsheet</strong>
+                        <div class="example">📸 <strong>Tabloid</strong> = báo khổ nhỏ (giật gân, tin tức giải trí). 📰 <strong>Broadsheet</strong> = báo khổ lớn (nghiêm túc, uy tín).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #a855f7;">
+                        <strong>📡 channel / broadcast</strong>
+                        <div class="example">🔢 <strong>Channel</strong> = kênh truyền hình. 📡 <strong>Broadcast</strong> = chương trình phát sóng (danh từ/động từ).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f43f5e;">
+                        <strong>📄 feature / article</strong>
+                        <div class="example">⭐ <strong>Feature</strong> = bài viết chuyên sâu, đặc biệt. 📝 <strong>Article</strong> = bài báo nói chung.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #84cc16;">
+                        <strong>✍️ journalist / columnist</strong>
+                        <div class="example">🎤 <strong>Journalist</strong> = nhà báo (nói chung). 📰 <strong>Columnist</strong> = người viết chuyên mục (cố định).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #d946ef;">
+                        <strong>📢 bulletin / newsflash</strong>
+                        <div class="example">📻 <strong>Bulletin</strong> = bản tin (ngắn gọn, định kỳ). ⚡ <strong>Newsflash</strong> = tin nóng (cắt ngang chương trình).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 2: PHRASAL VERBS (truyền thông, xuất bản) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f43f5e;">
+                <h2>📡 Nhóm 2: Phrasal verbs <span class="badge-group">Động từ ghép trong báo chí & truyền thông</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="timeline-stage">
+                    <h3>📝 1. Viết & xuất bản</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">come out</span> – được xuất bản (sách, báo) <br> <span class="phrasal-term">bring up</span> – đề cập đến chủ đề <br> <span class="phrasal-term">put forward</span> – đề xuất (ý kiến, kế hoạch) <br> <span class="phrasal-term">make up</span> – bịa chuyện, sáng tác <br> <span class="phrasal-term">go into</span> – đi sâu vào chi tiết</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>📺 2. Phát sóng & xem</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">come on</span> – bắt đầu được phát sóng (chương trình) <br> <span class="phrasal-term">turn over</span> – lật trang / chuyển kênh <br> <span class="phrasal-term">flick through</span> – lật nhanh qua các trang <br> <span class="phrasal-term">look up</span> – tra cứu thông tin</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>🔍 3. Xử lý thông tin & sự thật</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">make out</span> – giả vờ (điều gì là đúng) / cố gắng hiểu <br> <span class="phrasal-term">see through</span> – nhìn thấu (sự lừa dối) <br> <span class="phrasal-term">stand out</span> – nổi bật, dễ thấy <br> <span class="phrasal-term">hand out</span> – phát tay (tài liệu, tờ rơi) <br> <span class="phrasal-term">fill in</span> – điền vào chỗ trống</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 3: PHRASES & COLLOCATIONS -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f59e0b;">
+                <h2>📚 Nhóm 3: Phrases & collocations <span class="badge-group">Cụm từ cố định về truyền thông</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">in control of / under control</span> – kiểm soát / dưới sự kiểm soát <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">give a description of</span> – mô tả về <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">make a difference / tell the difference</span> – tạo ra sự khác biệt / phân biệt <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">take sth/sb for granted</span> – coi điều gì/ai đó là hiển nhiên <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">have an influence on</span> – có ảnh hưởng đến <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">on the Internet / surf the Internet</span> – trên mạng / lướt web <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in the news / on the news</span> – trên bản tin <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">take place</span> – diễn ra <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in question / question mark</span> – đang được đề cập / dấu hỏi <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in my view / in view of</span> – theo quan điểm của tôi / xét đến <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">watch (out) for / keep watch</span> – để ý / canh gác <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 4: WORD PATTERNS -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #10b981;">
+                <h2>🔗 Nhóm 4: Word patterns <span class="badge-group">Cấu trúc ngữ pháp & giới từ</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">according to sb</span> – theo như ai đó nói <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">announce sth (to sb) / announce that</span> – thông báo điều gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">likely to do / likely that</span> – có khả năng <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">believe sth / believe in / believe that</span> – tin tưởng <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">persuade sb to do / persuade sb of sth</span> – thuyết phục ai <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">comment on sth / make a comment</span> – bình luận về <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">confuse sth/sb with / confused about</span> – nhầm lẫn với / bối rối về <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">correspond with</span> – tương ứng với / trao đổi thư từ <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">describe sth/sb as / to sb</span> – mô tả như là <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">tell sb sth / tell sb to do</span> – bảo ai làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">hear sth/sb / hear about / hear from</span> – nghe / nghe về / nhận tin từ <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">inform sb that / inform sb about</span> – thông báo cho ai <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 5: WORD FORMATION (chi tiết từ PDF) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>📝 Nhóm 5: Word formation <span class="badge-group">Từ loại & phái sinh về truyền thông</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="word-grid">
+                    <div class="word-card"><div class="main-word">announce</div><div class="ipa">/əˈnaʊns/</div><div class="meaning">📢 thông báo</div><div class="example-sentence">➤ The CEO will announce the new product line.</div><div class="word-forms">🔸 announcement (n) – thông báo<br>🔸 unannounced (adj) – không báo trước</div></div>
+                    <div class="word-card"><div class="main-word">edit</div><div class="ipa">/ˈedɪt/</div><div class="meaning">✍️ biên tập</div><div class="example-sentence">➤ She edits a weekly magazine.</div><div class="word-forms">🔸 editor (n) – biên tập viên<br>🔸 editorial (n/adj) – bài xã luận / thuộc biên tập<br>🔸 edited (adj) – đã được biên tập</div></div>
+                    <div class="word-card"><div class="main-word">power</div><div class="ipa">/ˈpaʊər/</div><div class="meaning">💪 sức mạnh, quyền lực</div><div class="example-sentence">➤ The media has great power over public opinion.</div><div class="word-forms">🔸 powerful (adj) – mạnh mẽ<br>🔸 powerless (adj) – bất lực<br>🔸 empower (v) – trao quyền</div></div>
+                    <div class="word-card"><div class="main-word">believe</div><div class="ipa">/bɪˈliːv/</div><div class="meaning">🙏 tin tưởng</div><div class="example-sentence">➤ I believe everything I read online.</div><div class="word-forms">🔸 belief (n) – niềm tin<br>🔸 disbelief (n) – sự hoài nghi<br>🔸 unbelievable (adj) – không thể tin được<br>🔸 unbelievably (adv) – khó tin một cách</div></div>
+                    <div class="word-card"><div class="main-word">humour</div><div class="ipa">/ˈhjuːmər/</div><div class="meaning">😂 hài hước</div><div class="example-sentence">➤ British humour is known for being dry.</div><div class="word-forms">🔸 humorous (adj) – hài hước<br>🔸 humourless (adj) – không hài hước, khô khan</div></div>
+                    <div class="word-card"><div class="main-word">ridicule</div><div class="ipa">/ˈrɪdɪkjuːl/</div><div class="meaning">😂 chế nhạo, nhạo báng</div><div class="example-sentence">➤ His ideas were met with ridicule.</div><div class="word-forms">🔸 ridiculous (adj) – lố bịch, vô lý<br>🔸 ridiculously (adv) – một cách lố bịch<br>🔸 ridiculousness (n) – sự lố bịch</div></div>
+                    <div class="word-card"><div class="main-word">communicate</div><div class="ipa">/kəˈmjuːnɪkeɪt/</div><div class="meaning">💬 giao tiếp</div><div class="example-sentence">➤ We need to communicate more effectively.</div><div class="word-forms">🔸 communication (n) – giao tiếp<br>🔸 uncommunicative (adj) – khó gần, ít nói<br>🔸 communicator (n) – người giao tiếp</div></div>
+                    <div class="word-card"><div class="main-word">inform</div><div class="ipa">/ɪnˈfɔːm/</div><div class="meaning">ℹ️ thông báo, cung cấp tin</div><div class="example-sentence">➤ Please inform us of any changes.</div><div class="word-forms">🔸 information (n) – thông tin<br>🔸 informed (adj) – có hiểu biết<br>🔸 uninformed (adj) – không được thông tin<br>🔸 informative (adj) – mang tính thông tin</div></div>
+                    <div class="word-card"><div class="main-word">second</div><div class="ipa">/ˈsekənd/</div><div class="meaning">⏱️ thứ hai, giây</div><div class="example-sentence">➤ This is the second time I've seen this show.</div><div class="word-forms">🔸 secondly (adv) – thứ hai (trong danh sách)<br>🔸 secondary (adj) – thứ yếu, phụ</div></div>
+                    <div class="word-card"><div class="main-word">convince</div><div class="ipa">/kənˈvɪns/</div><div class="meaning">🤝 thuyết phục</div><div class="example-sentence">➤ She convinced me to watch the documentary.</div><div class="word-forms">🔸 convinced (adj) – bị thuyết phục<br>🔸 unconvincing (adj) – không thuyết phục<br>🔸 convincing (adj) – có sức thuyết phục</div></div>
+                    <div class="word-card"><div class="main-word">journal</div><div class="ipa">/ˈdʒɜːnl/</div><div class="meaning">📔 nhật ký, tạp chí</div><div class="example-sentence">➤ She writes for a famous journal.</div><div class="word-forms">🔸 journalist (n) – nhà báo<br>🔸 journalism (n) – nghề báo<br>🔸 journalistic (adj) – thuộc nhà báo</div></div>
+                    <div class="word-card"><div class="main-word">write</div><div class="ipa">/raɪt/</div><div class="meaning">✍️ viết</div><div class="example-sentence">➤ He writes articles for the local newspaper.</div><div class="word-forms">🔸 writer (n) – nhà văn, tác giả<br>🔸 writing (n) – bài viết<br>🔸 written (adj) – được viết</div></div>
+                    <div class="word-card"><div class="main-word">discuss</div><div class="ipa">/dɪˈskʌs/</div><div class="meaning">🗣️ thảo luận</div><div class="example-sentence">➤ They discussed the news over dinner.</div><div class="word-forms">🔸 discussion (n) – cuộc thảo luận</div></div>
+                    <div class="word-card"><div class="main-word">politics</div><div class="ipa">/ˈpɒlətɪks/</div><div class="meaning">🏛️ chính trị</div><div class="example-sentence">➤ The media often covers politics.</div><div class="word-forms">🔸 political (adj) – thuộc chính trị<br>🔸 politically (adv) – về mặt chính trị<br>🔸 politician (n) – chính trị gia</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TAB LUYỆN TẬP (câu hỏi từ unit 8) ================= -->
+    <div id="practiceTab" class="tab-pane">
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #e11d48;">
+                <h2>✍️ Bài tập từ vựng Unit 8 (The Media)</h2>
+            </div>
+            <div class="group-content exercise-list">
+                <form id="mediaQuiz">
+                    <h3>📺 Part A: Chọn từ đúng (contrast vocabulary)</h3>
+                    <div class="question-item">1. The politician ______ making any false statements. (denied / refused) → <input type="text" name="q1" size="15"></div>
+                    <div class="question-item">2. I ______ your point of view, but I still disagree. (accept / agree) → <input type="text" name="q2"></div>
+                    <div class="question-item">3. The sports ______ described the final goal in detail. (announcer / commentator) → <input type="text" name="q3"></div>
+                    <div class="question-item">4. The shocking ______ on the front page grabbed everyone's attention. (headline / heading) → <input type="text" name="q4"></div>
+                    <div class="question-item">5. The BBC is a respected ______ channel. (broadcast / broadcast) → <input type="text" name="q5"></div>
+                    <div class="question-item">6. She is a famous ______ who writes a weekly column. (journalist / columnist) → <input type="text" name="q6"></div>
+
+                    <h3>📡 Part B: Phrasal verbs (điền giới từ/trợ từ)</h3>
+                    <div class="question-item">7. The new magazine will come ______ next month. (out/off/in) → <input type="text" name="q7" size="10"></div>
+                    <div class="question-item">8. She brought ______ an interesting topic during the interview. (up/on/about) → <input type="text" name="q8"></div>
+                    <div class="question-item">9. I need to look ______ this word in the dictionary. (up/down/over) → <input type="text" name="q9"></div>
+                    <div class="question-item">10. He made ______ an excuse for being late. (up/out/off) → <input type="text" name="q10"></div>
+                    <div class="question-item">11. I can't make ______ what she's saying; the sound is too low. (out/up/off) → <input type="text" name="q11"></div>
+                    <div class="question-item">12. It was easy to see ______ his lies. (through/out/up) → <input type="text" name="q12"></div>
+
+                    <h3>📰 Part C: Collocations & phrases</h3>
+                    <div class="question-item">13. The fire was finally brought under ______. (control/influence/power) → <input type="text" name="q13"></div>
+                    <div class="question-item">14. Can you tell the ______ between these two photos? (difference/description/contrast) → <input type="text" name="q14"></div>
+                    <div class="question-item">15. Don't take your parents' support for ______. (granted/given/allowed) → <input type="text" name="q15"></div>
+                    <div class="question-item">16. Social media has a huge ______ on young people. (influence/effect/impact) → <input type="text" name="q16"></div>
+                    <div class="question-item">17. ______ my view, the article was biased. (In/On/At) → <input type="text" name="q17"></div>
+
+                    <h3>📝 Part D: Word formation (dùng từ trong ngoặc)</h3>
+                    <div class="question-item">18. The sudden ______ (announce) surprised everyone. → <input type="text" name="q18"></div>
+                    <div class="question-item">19. She works as a magazine ______ (edit). → <input type="text" name="q19"></div>
+                    <div class="question-item">20. The media has become increasingly ______ (power) in shaping public opinion. → <input type="text" name="q20"></div>
+                    <div class="question-item">21. It's ______ (believe) how fast news spreads on social media. → <input type="text" name="q21"></div>
+                    <div class="question-item">22. His ______ (humour) jokes always make the audience laugh. → <input type="text" name="q22"></div>
+                    <div class="question-item">23. Wearing that hat makes you look ______ (ridicule). → <input type="text" name="q23"></div>
+                    <div class="question-item">24. Effective ______ (communicate) is key in journalism. → <input type="text" name="q24"></div>
+                    <div class="question-item">25. The website provides very ______ (inform) articles. → <input type="text" name="q25"></div>
+                    <div class="question-item">26. ______ (second), I'd like to discuss the role of the media. → <input type="text" name="q26"></div>
+                    <div class="question-item">27. His argument was not ______ (convince). → <input type="text" name="q27"></div>
+                    <div class="question-item">28. She dreams of becoming a ______ (journal). → <input type="text" name="q28"></div>
+                    <div class="question-item">29. The ______ (write) of this article is anonymous. → <input type="text" name="q29"></div>
+                    <div class="question-item">30. We had a lively ______ (discuss) about fake news. → <input type="text" name="q30"></div>
+
+                    <button type="button" id="checkMediaBtn" style="background:#e11d48; color:white; border:none; padding:12px 28px; border-radius:40px; font-weight:bold; margin-top:20px;">📺 Kiểm tra đáp án</button>
+                    <div id="resultArea" style="margin-top: 20px; font-weight: bold; background: #e6f7f5; padding: 16px; border-radius: 24px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panes.forEach(pane => pane.classList.remove('active-pane'));
+            if(tabId === 'theory') document.getElementById('theoryTab').classList.add('active-pane');
+            else document.getElementById('practiceTab').classList.add('active-pane');
+        });
+    });
+
+    // Đáp án bài tập (dựa trên nội dung unit 8)
+    const mediaAnswers = {
+        q1:"denied", q2:"accept", q3:"commentator", q4:"headline", q5:"broadcast", q6:"columnist",
+        q7:"out", q8:"up", q9:"up", q10:"up", q11:"out", q12:"through",
+        q13:"control", q14:"difference", q15:"granted", q16:"influence", q17:"in",
+        q18:"announcement", q19:"editor", q20:"powerful", q21:"unbelievable", q22:"humorous",
+        q23:"ridiculous", q24:"communication", q25:"informative", q26:"Secondly", q27:"convincing",
+        q28:"journalist", q29:"writer", q30:"discussion"
+    };
+    document.getElementById('checkMediaBtn').addEventListener('click', function(){
+        let score = 0;
+        let total = 30;
+        for(let i=1; i<=30; i++){
+            let userAns = document.querySelector(`[name="q${i}"]`)?.value.trim().toLowerCase();
+            let correct = mediaAnswers[`q${i}`].toLowerCase();
+            if(userAns === correct) score++;
+        }
+        let percent = Math.round(score/total*100);
+        let message = "";
+        if(score >= 27) message = "🎉 Xuất sắc! Bạn đã nắm vững từ vựng về Truyền thông! 📺📰";
+        else if(score >= 22) message = "👍 Tốt! Hãy xem lại những câu sai để cải thiện thêm.";
+        else message = "📚 Hãy học kỹ phần lý thuyết phía trên và làm lại bài tập nhé!";
+        document.getElementById('resultArea').innerHTML = `📺 Kết quả: ${score}/${total} câu đúng (${percent}%). ${message}`;
+    });
+</script>
+</body>
+</html>
