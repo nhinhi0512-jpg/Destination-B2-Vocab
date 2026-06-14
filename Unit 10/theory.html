@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Unit 10: People & Society - Lý thuyết từ vựng chi tiết | Destination B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 30px 20px 60px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            background: #7c3aed;
+            color: white;
+            box-shadow: 0 8px 18px rgba(124,58,237,0.3);
+        }
+        .tab-pane {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+        .tab-pane.active-pane {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* header & card */
+        .unit-header {
+            background: linear-gradient(125deg, #7c3aed, #c084fc);
+            border-radius: 40px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .group {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .group-header {
+            padding: 20px 28px;
+            border-bottom: 4px solid;
+        }
+        .group-header h2 {
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge-group {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .group-content {
+            padding: 24px 28px;
+        }
+        /* Grid cho nhóm 1 contrast */
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .contrast-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+            border-left: 5px solid;
+            transition: all 0.2s;
+        }
+        .contrast-card strong {
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .example {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-top: 8px;
+            font-style: italic;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+        }
+        /* word grid */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .word-card {
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 18px;
+            border-left: 6px solid #eab308;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .word-card .main-word {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #854d0e;
+            margin-bottom: 4px;
+        }
+        .ipa {
+            font-family: monospace;
+            color: #475569;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .meaning {
+            font-weight: 600;
+            color: #0f172a;
+            border-left: 3px solid #facc15;
+            padding-left: 10px;
+            margin: 8px 0;
+        }
+        .example-sentence {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            color: #334155;
+        }
+        .colloc {
+            font-size: 0.85rem;
+            background: #fff1cf;
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 8px 0;
+        }
+        .word-forms {
+            background: #e6f7f5;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+        .syn-ant {
+            font-size: 0.8rem;
+            color: #1f2937;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* phrasal verb style */
+        .phrasal-blue {
+            background: #ede9fe;
+            border-left: 5px solid #7c3aed;
+            padding: 12px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+        .phrasal-term {
+            font-weight: 800;
+            color: #5b21b6;
+            font-size: 1rem;
+        }
+        .timeline-stage {
+            margin-bottom: 28px;
+        }
+        .flashcard {
+            background: #fef9e3;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #fde047;
+        }
+        .pattern-word {
+            font-weight: 800;
+            color: #b45309;
+        }
+        .meaning-vn {
+            color: #475569;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .exercise-list {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .question-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 16px;
+        }
+        .back-home {
+            background: #1e293b;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 760px) {
+            .group-content { padding: 16px; }
+            .word-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back-home">← Về trang chủ từ vựng</a>
+    <div class="unit-header">
+        <h1>👥 Unit 10: People & Society</h1>
+        <p>Destination B2 – từ vựng chuyên sâu: các mối quan hệ, tính cách, xã hội, cảm xúc + thực hành 30+ câu</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="theory">📘 Lý thuyết chi tiết</button>
+        <button class="tab-btn" data-tab="practice">✍️ Luyện tập (30 câu)</button>
+    </div>
+
+    <!-- ================= TAB LÝ THUYẾT ================= -->
+    <div id="theoryTab" class="tab-pane active-pane">
+        
+        <!-- NHÓM 1: TOPIC VOCABULARY IN CONTRAST -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #7c3aed;">
+                <h2>📖 Nhóm 1: Topic vocabulary in contrast <span class="badge-group">Phân biệt từ dễ nhầm về người & xã hội</span></h2>
+            </div>
+            <div class="group-content">
+                <p style="margin-bottom: 20px;"><strong>Cách học:</strong> Liên hệ với các tình huống giao tiếp hàng ngày.</p>
+                <div class="contrast-grid">
+                    <div class="contrast-card" style="border-left-color: #ef4444;">
+                        <strong>🤝 relationship / connection</strong>
+                        <div class="example">❤️ <strong>Relationship</strong> = mối quan hệ (tình cảm, gia đình). 🔌 <strong>Connection</strong> = sự liên kết (logic, công việc).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #eab308;">
+                        <strong>🆘 support / assist</strong>
+                        <div class="example">🤗 <strong>Support</strong> = hỗ trợ (tinh thần, tài chính). 🛠️ <strong>Assist</strong> = giúp đỡ (công việc cụ thể).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #10b981;">
+                        <strong>👥 company / group</strong>
+                        <div class="example">🏢 <strong>Company</strong> = công ty / sự bầu bạn. 👨‍👩‍👧‍👦 <strong>Group</strong> = nhóm (người).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #ec489a;">
+                        <strong>⚖️ blame / fault</strong>
+                        <div class="example">😠 <strong>Blame</strong> = sự đổ lỗi (take the blame). ❌ <strong>Fault</strong> = lỗi (it's my fault).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #8b5cf6;">
+                        <strong>😊 kind / polite</strong>
+                        <div class="example">💖 <strong>Kind</strong> = tốt bụng (helpful). 🥂 <strong>Polite</strong> = lịch sự (cư xử đúng mực).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f97316;">
+                        <strong>⭐ popular / famous</strong>
+                        <div class="example">🏆 <strong>Popular</strong> = được yêu thích (bạn bè). 📸 <strong>Famous</strong> = nổi tiếng (toàn thế giới).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #06b6d4;">
+                        <strong>🏛️ old / ancient</strong>
+                        <div class="example">👴 <strong>Old</strong> = cũ, già. 🏺 <strong>Ancient</strong> = cổ đại (hàng nghìn năm).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #64748b;">
+                        <strong>💔 sympathetic / likeable</strong>
+                        <div class="example">😢 <strong>Sympathetic</strong> = thông cảm. 😊 <strong>Likeable</strong> = dễ mến.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #a855f7;">
+                        <strong>📊 typical / usual / ordinary</strong>
+                        <div class="example">📌 <strong>Typical</strong> = điển hình. 🔄 <strong>Usual</strong> = thông thường. 🧍 <strong>Ordinary</strong> = bình thường, tầm thường.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f43f5e;">
+                        <strong>👏 crowd / audience</strong>
+                        <div class="example">🏟️ <strong>Crowd</strong> = đám đông. 🎭 <strong>Audience</strong> = khán giả (có tổ chức).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #84cc16;">
+                        <strong>😤 nervous / bad-tempered</strong>
+                        <div class="example">😰 <strong>Nervous</strong> = lo lắng. 🤬 <strong>Bad-tempered</strong> = dễ cáu gắt.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #d946ef;">
+                        <strong>📍 close / near</strong>
+                        <div class="example">👭 <strong>Close</strong> = thân thiết. 🗺️ <strong>Near</strong> = gần về khoảng cách.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #0ea5e9;">
+                        <strong>😊 enjoy / please</strong>
+                        <div class="example">🎮 <strong>Enjoy</strong> = thích thú. 😌 <strong>Please</strong> = làm hài lòng.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f59e0b;">
+                        <strong>🧠 sensitive / sensible</strong>
+                        <div class="example">😭 <strong>Sensitive</strong> = nhạy cảm. 🧐 <strong>Sensible</strong> = hợp lý, khôn ngoan.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #14b8a6;">
+                        <strong>❓ unknown / infamous</strong>
+                        <div class="example">🤷 <strong>Unknown</strong> = không nổi tiếng. 😈 <strong>Infamous</strong> = khét tiếng (xấu).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 2: PHRASAL VERBS (mối quan hệ) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #c084fc;">
+                <h2>💬 Nhóm 2: Phrasal verbs <span class="badge-group">Động từ ghép về quan hệ bạn bè & gia đình</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="timeline-stage">
+                    <h3>🤝 1. Quan hệ tích cực</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">get on (with)</span> – có quan hệ tốt với ai <br> <span class="phrasal-term">make up</span> – làm lành sau cãi nhau <br> <span class="phrasal-term">stand up for</span> – bảo vệ, ủng hộ ai <br> <span class="phrasal-term">look up to</span> – ngưỡng mộ, kính trọng <br> <span class="phrasal-term">ask after</span> – hỏi thăm sức khỏe ai</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>💔 2. Xung đột & cảm xúc tiêu cực</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">fall out (with)</span> – cãi nhau và không chơi với nhau nữa <br> <span class="phrasal-term">pick on</span> – bắt nạt, trêu chọc ai đó một cách không công bằng <br> <span class="phrasal-term">put down</span> – chê bai, làm ai cảm thấy ngu ngốc <br> <span class="phrasal-term">look down on</span> – coi thường, khinh rẻ</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>👨‍👩‍👧 3. Gia đình & cuộc sống</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">bring up</span> – nuôi dạy con cái <br> <span class="phrasal-term">grow up</span> – lớn lên, trưởng thành <br> <span class="phrasal-term">settle down</span> – ổn định cuộc sống, lập gia đình <br> <span class="phrasal-term">pass away</span> – qua đời (cách nói lịch sự) <br> <span class="phrasal-term">fall for</span> – phải lòng / tin vào lừa gạt</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>😲 4. Cảm xúc bất ngờ</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">take aback</span> – làm bất ngờ (thường bị động: be taken aback) <br> <span class="phrasal-term">settle down</span> – bình tĩnh lại sau khi buồn, giận</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 3: PHRASES & COLLOCATIONS -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f59e0b;">
+                <h2>📚 Nhóm 3: Phrases & collocations <span class="badge-group">Cụm từ cố định về xã hội & quan hệ</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">show/give your approval of/for</span> – bày tỏ sự đồng tình <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">have an argument (with sb) about sth</span> – tranh luận, cãi nhau <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">take care of / care for/about</span> – chăm sóc / quan tâm đến <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">have the courage to do / it takes courage</span> – có dũng cảm làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in disguise / wear a disguise</span> – cải trang <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">have/start a family / nuclear family</span> – có gia đình / gia đình hạt nhân <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">do/owe sb a favour / be in favour of</span> – giúp ai việc gì / ủng hộ <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">make/become/stay friends with</span> – kết bạn / giữ tình bạn <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">be/fall in love with</span> – yêu ai đó <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">in a good/bad mood</span> – có tâm trạng tốt/xấu <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">take pity on / feel pity for</span> – thương hại <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">promise to do / make a promise</span> – hứa làm gì / đưa ra lời hứa <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 4: WORD PATTERNS -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #10b981;">
+                <h2>🔗 Nhóm 4: Word patterns <span class="badge-group">Cấu trúc ngữ pháp & giới từ</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">agree with/on/to sth; agree to do</span> – đồng ý với / đồng ý làm <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">force sb to do / force sb into sth</span> – ép buộc ai làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">allow sb to do / allow sth</span> – cho phép ai làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">approve of sth/doing / approve sth</span> – tán thành việc gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">let sb do sth</span> – để cho ai làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">object to sth/doing</span> – phản đối việc gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">pretend to be / pretend to do</span> – giả vờ là / giả vờ làm <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">ban sb from sth/doing / ban sth</span> – cấm ai làm gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">rely on sth/sb</span> – dựa dẫm vào ai/cái gì <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">convince sb of sth / convince sb to do</span> – thuyết phục ai <span class="meaning-vn"></span></div>
+                    <div class="flashcard"><span class="pattern-word">independent of/from</span> – độc lập với <span class="meaning-vn"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 5: WORD FORMATION (chi tiết từ PDF) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>📝 Nhóm 5: Word formation <span class="badge-group">Từ loại & phái sinh về tính cách & xã hội</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="word-grid">
+                    <div class="word-card"><div class="main-word">able</div><div class="ipa">/ˈeɪbl/</div><div class="meaning">💪 có thể, có năng lực</div><div class="example-sentence">➤ She is able to solve complex problems.</div><div class="word-forms">🔸 unable (adj) – không thể<br>🔸 ability (n) – khả năng<br>🔸 disability (n) – khuyết tật<br>🔸 disabled (adj) – khuyết tật</div></div>
+                    <div class="word-card"><div class="main-word">happy</div><div class="ipa">/ˈhæpi/</div><div class="meaning">😊 hạnh phúc</div><div class="example-sentence">➤ She felt happy with her life.</div><div class="word-forms">🔸 unhappy (adj) – không vui<br>🔸 happiness (n) – hạnh phúc<br>🔸 happily (adv) – một cách vui vẻ</div></div>
+                    <div class="word-card"><div class="main-word">obey</div><div class="ipa">/əˈbeɪ/</div><div class="meaning">📜 tuân theo, vâng lời</div><div class="example-sentence">➤ Children should obey their parents.</div><div class="word-forms">🔸 disobey (v) – không tuân theo<br>🔸 obedient (adj) – ngoan ngoãn<br>🔸 disobedience (n) – sự không vâng lời</div></div>
+                    <div class="word-card"><div class="main-word">achieve</div><div class="ipa">/əˈtʃiːv/</div><div class="meaning">🏆 đạt được</div><div class="example-sentence">➤ He achieved his dream of becoming a doctor.</div><div class="word-forms">🔸 achievement (n) – thành tựu<br>🔸 achievable (adj) – có thể đạt được</div></div>
+                    <div class="word-card"><div class="main-word">jealous</div><div class="ipa">/ˈdʒeləs/</div><div class="meaning">😤 ghen tị</div><div class="example-sentence">➤ She was jealous of her sister's success.</div><div class="word-forms">🔸 jealousy (n) – lòng ghen tị<br>🔸 jealously (adv) – một cách ghen tị</div></div>
+                    <div class="word-card"><div class="main-word">person</div><div class="ipa">/ˈpɜːsn/</div><div class="meaning">👤 con người, cá nhân</div><div class="example-sentence">➤ He is a kind person.</div><div class="word-forms">🔸 personal (adj) – cá nhân<br>🔸 personality (n) – tính cách<br>🔸 impersonal (adj) – khách quan, vô cảm</div></div>
+                    <div class="word-card"><div class="main-word">argue</div><div class="ipa">/ˈɑːɡjuː/</div><div class="meaning">🗣️ tranh luận, cãi nhau</div><div class="example-sentence">➤ They argued about politics.</div><div class="word-forms">🔸 argument (n) – cuộc tranh luận<br>🔸 argumentative (adj) – thích cãi nhau</div></div>
+                    <div class="word-card"><div class="main-word">kind</div><div class="ipa">/kaɪnd/</div><div class="meaning">💖 tốt bụng</div><div class="example-sentence">➤ It was very kind of you to help.</div><div class="word-forms">🔸 unkind (adj) – không tốt<br>🔸 kindness (n) – lòng tốt<br>🔸 kindly (adv) – một cách tử tế</div></div>
+                    <div class="word-card"><div class="main-word">polite</div><div class="ipa">/pəˈlaɪt/</div><div class="meaning">🥂 lịch sự</div><div class="example-sentence">➤ Always be polite to your elders.</div><div class="word-forms">🔸 impolite (adj) – bất lịch sự<br>🔸 politeness (n) – sự lịch sự<br>🔸 politely (adv) – lịch sự</div></div>
+                    <div class="word-card"><div class="main-word">care</div><div class="ipa">/keər/</div><div class="meaning">❤️ quan tâm, chăm sóc</div><div class="example-sentence">➤ She cares deeply about the environment.</div><div class="word-forms">🔸 careful (adj) – cẩn thận<br>🔸 careless (adj) – bất cẩn<br>🔸 caring (adj) – quan tâm đến người khác</div></div>
+                    <div class="word-card"><div class="main-word">marry</div><div class="ipa">/ˈmæri/</div><div class="meaning">💍 kết hôn</div><div class="example-sentence">➤ They married in 2010.</div><div class="word-forms">🔸 marriage (n) – hôn nhân<br>🔸 married (adj) – đã kết hôn<br>🔸 unmarried (adj) – chưa kết hôn</div></div>
+                    <div class="word-card"><div class="main-word">relate</div><div class="ipa">/rɪˈleɪt/</div><div class="meaning">🔗 liên quan, kết nối</div><div class="example-sentence">➤ I can relate to your story.</div><div class="word-forms">🔸 relative (n/adj) – họ hàng / tương đối<br>🔸 relation (n) – mối quan hệ<br>🔸 relationship (n) – mối quan hệ (tình cảm)</div></div>
+                    <div class="word-card"><div class="main-word">correspond</div><div class="ipa">/ˌkɒrəˈspɒnd/</div><div class="meaning">✉️ trao đổi thư từ, phù hợp</div><div class="example-sentence">➤ They have corresponded for years.</div><div class="word-forms">🔸 correspondence (n) – thư từ liên lạc<br>🔸 corresponding (adj) – tương ứng</div></div>
+                    <div class="word-card"><div class="main-word">nerve</div><div class="ipa">/nɜːv/</div><div class="meaning">😰 thần kinh, sự can đảm</div><div class="example-sentence">➤ It takes a lot of nerve to speak publicly.</div><div class="word-forms">🔸 nervous (adj) – lo lắng, bồn chồn<br>🔸 nervously (adv) – một cách lo lắng</div></div>
+                    <div class="word-card"><div class="main-word">willing</div><div class="ipa">/ˈwɪlɪŋ/</div><div class="meaning">🙋 sẵn lòng</div><div class="example-sentence">➤ She is willing to help.</div><div class="word-forms">🔸 unwilling (adj) – không sẵn lòng<br>🔸 willingness (n) – sự sẵn lòng<br>🔸 unwillingly (adv) – miễn cưỡng</div></div>
+                    <div class="word-card"><div class="main-word">friend</div><div class="ipa">/frend/</div><div class="meaning">👭 bạn bè</div><div class="example-sentence">➤ He is my best friend.</div><div class="word-forms">🔸 friendship (n) – tình bạn<br>🔸 friendly (adj) – thân thiện<br>🔸 unfriendly (adj) – không thân thiện</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TAB LUYỆN TẬP (câu hỏi từ unit 10) ================= -->
+    <div id="practiceTab" class="tab-pane">
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #7c3aed;">
+                <h2>✍️ Bài tập từ vựng Unit 10 (People & Society)</h2>
+            </div>
+            <div class="group-content exercise-list">
+                <form id="peopleQuiz">
+                    <h3>👥 Part A: Chọn từ đúng (contrast vocabulary)</h3>
+                    <div class="question-item">1. We have a very good working ______ with our partners. (relationship / connection) → <input type="text" name="q1" size="15"></div>
+                    <div class="question-item">2. The accident was entirely my ______. (blame / fault) → <input type="text" name="q2"></div>
+                    <div class="question-item">3. She is very ______ - she always helps others. (kind / polite) → <input type="text" name="q3"></div>
+                    <div class="question-item">4. The museum has an ______ collection of artifacts. (old / ancient) → <input type="text" name="q4"></div>
+                    <div class="question-item">5. Be ______ and save some money for the future. (sensitive / sensible) → <input type="text" name="q5"></div>
+                    <div class="question-item">6. The entire ______ cheered when the band came on stage. (crowd / audience) → <input type="text" name="q6"></div>
+
+                    <h3>💬 Part B: Phrasal verbs (điền giới từ/trợ từ)</h3>
+                    <div class="question-item">7. Do you get ______ with your colleagues? (on/in/along) → <input type="text" name="q7" size="10"></div>
+                    <div class="question-item">8. They had a big fight but later they made ______. (up/out/off) → <input type="text" name="q8"></div>
+                    <div class="question-item">9. It's important to stand ______ for what you believe in. (up/on/out) → <input type="text" name="q9"></div>
+                    <div class="question-item">10. She really looks ______ to her older sister. (up/down/on) → <input type="text" name="q10"></div>
+                    <div class="question-item">11. He was picked ______ by bullies at school. (on/at/in) → <input type="text" name="q11"></div>
+                    <div class="question-item">12. After travelling the world, he decided to settle ______. (down/up/off) → <input type="text" name="q12"></div>
+
+                    <h3>📚 Part C: Collocations & phrases</h3>
+                    <div class="question-item">13. Please take ______ of your younger brother while I'm out. (care/note/look) → <input type="text" name="q13"></div>
+                    <div class="question-item">14. She has the ______ to speak in front of thousands. (courage/brave/nerve) → <input type="text" name="q14"></div>
+                    <div class="question-item">15. Could you do me a ______ and lend me some money? (favour/help/support) → <input type="text" name="q15"></div>
+                    <div class="question-item">16. He fell in ______ with his best friend's sister. (love/like/admiration) → <input type="text" name="q16"></div>
+                    <div class="question-item">17. I'm not in the ______ for a joke right now. (mood/feeling/emotion) → <input type="text" name="q17"></div>
+
+                    <h3>📝 Part D: Word formation (dùng từ trong ngoặc)</h3>
+                    <div class="question-item">18. Her ______ (able) to speak three languages impressed everyone. → <input type="text" name="q18"></div>
+                    <div class="question-item">19. Money doesn't guarantee ______ (happy). → <input type="text" name="q19"></div>
+                    <div class="question-item">20. It's ______ (polite) to interrupt when someone is speaking. → <input type="text" name="q20"></div>
+                    <div class="question-item">21. The ______ (friend) between them lasted a lifetime. → <input type="text" name="q21"></div>
+                    <div class="question-item">22. He showed great ______ (kind) by helping the homeless man. → <input type="text" name="q22"></div>
+                    <div class="question-item">23. Winning the Nobel Prize was a great ______ (achieve). → <input type="text" name="q23"></div>
+                    <div class="question-item">24. She felt ______ (nerve) before her job interview. → <input type="text" name="q24"></div>
+                    <div class="question-item">25. I'm ______ (will) to help you with the project. → <input type="text" name="q25"></div>
+                    <div class="question-item">26. His ______ (argue) with his brother lasted for hours. → <input type="text" name="q26"></div>
+                    <div class="question-item">27. The ______ (marry) had to end due to constant fighting. → <input type="text" name="q27"></div>
+                    <div class="question-item">28. She has a very outgoing ______ (person). → <input type="text" name="q28"></div>
+                    <div class="question-item">29. We maintained a long ______ (correspond) through letters. → <input type="text" name="q29"></div>
+                    <div class="question-item">30. His ______ (jealous) of his friend's success was obvious. → <input type="text" name="q30"></div>
+
+                    <button type="button" id="checkPeopleBtn" style="background:#7c3aed; color:white; border:none; padding:12px 28px; border-radius:40px; font-weight:bold; margin-top:20px;">👥 Kiểm tra đáp án</button>
+                    <div id="resultArea" style="margin-top: 20px; font-weight: bold; background: #e6f7f5; padding: 16px; border-radius: 24px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panes.forEach(pane => pane.classList.remove('active-pane'));
+            if(tabId === 'theory') document.getElementById('theoryTab').classList.add('active-pane');
+            else document.getElementById('practiceTab').classList.add('active-pane');
+        });
+    });
+
+    // Đáp án bài tập (dựa trên nội dung unit 10)
+    const peopleAnswers = {
+        q1:"relationship", q2:"fault", q3:"kind", q4:"ancient", q5:"sensible", q6:"audience",
+        q7:"on", q8:"up", q9:"up", q10:"up", q11:"on", q12:"down",
+        q13:"care", q14:"courage", q15:"favour", q16:"love", q17:"mood",
+        q18:"ability", q19:"happiness", q20:"impolite", q21:"friendship", q22:"kindness",
+        q23:"achievement", q24:"nervous", q25:"willing", q26:"argument", q27:"marriage",
+        q28:"personality", q29:"correspondence", q30:"jealousy"
+    };
+    document.getElementById('checkPeopleBtn').addEventListener('click', function(){
+        let score = 0;
+        let total = 30;
+        for(let i=1; i<=30; i++){
+            let userAns = document.querySelector(`[name="q${i}"]`)?.value.trim().toLowerCase();
+            let correct = peopleAnswers[`q${i}`].toLowerCase();
+            if(userAns === correct) score++;
+        }
+        let percent = Math.round(score/total*100);
+        let message = "";
+        if(score >= 27) message = "🎉 Xuất sắc! Bạn đã nắm vững từ vựng về Con người & Xã hội! 👥💯";
+        else if(score >= 22) message = "👍 Tốt! Hãy xem lại những câu sai để cải thiện thêm.";
+        else message = "📚 Hãy học kỹ phần lý thuyết phía trên và làm lại bài tập nhé!";
+        document.getElementById('resultArea').innerHTML = `👥 Kết quả: ${score}/${total} câu đúng (${percent}%). ${message}`;
+    });
+</script>
+</body>
+</html>
