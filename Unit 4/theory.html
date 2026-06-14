@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Unit 4: Sport & Leisure - Lý thuyết từ vựng chi tiết | Destination B2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, 'Roboto', sans-serif;
+            background: #f0f4f8;
+            color: #0f172a;
+            line-height: 1.5;
+            padding: 30px 20px 60px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: 0.2s;
+            color: #1e293b;
+        }
+        .tab-btn.active {
+            background: #dc2626;
+            color: white;
+            box-shadow: 0 8px 18px rgba(220,38,38,0.3);
+        }
+        .tab-pane {
+            display: none;
+            animation: fade 0.2s ease;
+        }
+        .tab-pane.active-pane {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(8px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* header & card */
+        .unit-header {
+            background: linear-gradient(125deg, #dc2626, #f97316);
+            border-radius: 40px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .group {
+            background: white;
+            border-radius: 32px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .group-header {
+            padding: 20px 28px;
+            border-bottom: 4px solid;
+        }
+        .group-header h2 {
+            font-size: 1.7rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge-group {
+            font-size: 0.75rem;
+            background: #eef2ff;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+        }
+        .group-content {
+            padding: 24px 28px;
+        }
+        /* Grid cho nhóm 1 contrast */
+        .contrast-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .contrast-card {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 24px;
+            border-left: 5px solid;
+            transition: all 0.2s;
+        }
+        .contrast-card strong {
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+        .example {
+            font-size: 0.85rem;
+            color: #334155;
+            margin-top: 8px;
+            font-style: italic;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 16px;
+        }
+        /* word grid cho nhóm word formation */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        .word-card {
+            background: #fefce8;
+            border-radius: 24px;
+            padding: 18px;
+            border-left: 6px solid #eab308;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .word-card .main-word {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #854d0e;
+            margin-bottom: 4px;
+        }
+        .ipa {
+            font-family: monospace;
+            color: #475569;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .meaning {
+            font-weight: 600;
+            color: #0f172a;
+            border-left: 3px solid #facc15;
+            padding-left: 10px;
+            margin: 8px 0;
+        }
+        .example-sentence {
+            background: #f8fafc;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.85rem;
+            margin: 12px 0;
+            color: #334155;
+        }
+        .colloc {
+            font-size: 0.85rem;
+            background: #fff1cf;
+            padding: 6px 10px;
+            border-radius: 16px;
+            margin: 8px 0;
+        }
+        .word-forms {
+            background: #e6f7f5;
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 0.8rem;
+            margin: 10px 0;
+        }
+        .syn-ant {
+            font-size: 0.8rem;
+            color: #1f2937;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        /* phrasal & colloc màu đỏ cam */
+        .phrasal-blue {
+            background: #ffedd5;
+            border-left: 5px solid #f97316;
+            padding: 12px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+        }
+        .phrasal-term {
+            font-weight: 800;
+            color: #c2410c;
+            font-size: 1rem;
+        }
+        .timeline-stage {
+            margin-bottom: 28px;
+        }
+        .flashcard {
+            background: #fef9e3;
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #fde047;
+        }
+        .pattern-word {
+            font-weight: 800;
+            color: #b45309;
+        }
+        .meaning-vn {
+            color: #475569;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        .exercise-list {
+            background: #f1f5f9;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .question-item {
+            margin-bottom: 24px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 16px;
+        }
+        .back-home {
+            background: #1e293b;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 760px) {
+            .group-content { padding: 16px; }
+            .word-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="../index.html" class="back-home">← Về trang chủ từ vựng</a>
+    <div class="unit-header">
+        <h1>🏅 Unit 4: Sport & Leisure</h1>
+        <p>Destination B2 – từ vựng chuyên sâu: thể thao, giải trí, thi đấu + thực hành 30+ câu</p>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="theory">📘 Lý thuyết chi tiết</button>
+        <button class="tab-btn" data-tab="practice">✍️ Luyện tập (30+ câu)</button>
+    </div>
+
+    <!-- ================= TAB LÝ THUYẾT ================= -->
+    <div id="theoryTab" class="tab-pane active-pane">
+        
+        <!-- NHÓM 1: TOPIC VOCABULARY IN CONTRAST (thể thao, địa điểm, hành động) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #dc2626;">
+                <h2>📖 Nhóm 1: Topic vocabulary in contrast <span class="badge-group">Phân biệt từ dễ nhầm trong thể thao & giải trí</span></h2>
+            </div>
+            <div class="group-content">
+                <p style="margin-bottom: 20px;"><strong>Cách học:</strong> Liên kết mỗi từ với một môn thể thao hoặc tình huống cụ thể.</p>
+                <div class="contrast-grid">
+                    <div class="contrast-card" style="border-left-color: #ef4444;">
+                        <strong>🏟️ pitch / court / course / ring / rink / track</strong>
+                        <div class="example">⚽ <strong>Pitch</strong> = sân bóng đá, rugby. 🎾 <strong>Court</strong> = sân tennis, bóng rổ. 🏌️ <strong>Course</strong> = sân golf. 🥊 <strong>Ring</strong> = võ đài boxing. ⛸️ <strong>Rink</strong> = sân trượt băng. 🏃 <strong>Track</strong> = đường chạy điền kinh.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #eab308;">
+                        <strong>🏆 beat / win / score / equal / draw</strong>
+                        <div class="example">🥇 <strong>Beat</strong> + đội đối thủ (beat us). <strong>Win</strong> + trận đấu/cúp (win the match). <strong>Score</strong> = ghi bàn. <strong>Equal</strong> / <strong>draw</strong> = hòa (equal a goal, draw 2-2).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #10b981;">
+                        <strong>👟 equipment / tool / gear</strong>
+                        <div class="example">🎣 <strong>Fishing rod</strong> (cần câu) / <strong>racket</strong> (vợt) / <strong>bat</strong> (gậy bóng chày, cricket) / <strong>club</strong> (gậy golf). <strong>Equipment</strong> = trang thiết bị nói chung.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #ec489a;">
+                        <strong>👀 umpire / referee / spectator / viewer</strong>
+                        <div class="example">🟡 <strong>Umpire</strong> = trọng tài (cricket, tennis). <strong>Referee</strong> = trọng tài (bóng đá, bóng rổ). <strong>Spectator</strong> = khán giả trực tiếp. <strong>Viewer</strong> = người xem TV.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #8b5cf6;">
+                        <strong>🎯 final / finale / half time / interval</strong>
+                        <div class="example">🏁 <strong>Final</strong> = trận chung kết. <strong>Finale</strong> = phần kết (phim, nhạc kịch). ⏸️ <strong>Half time</strong> = giờ nghỉ giữa hiệp thể thao. <strong>Interval</strong> = giờ giải lao (nhà hát, rạp chiếu phim).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #f97316;">
+                        <strong>🎣 amateur / professional</strong>
+                        <div class="example">⭐ <strong>Amateur</strong> = nghiệp dư, chơi vì đam mê. 💼 <strong>Professional</strong> = chuyên nghiệp (kiếm sống).</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #06b6d4;">
+                        <strong>🏅 competitors / opponents / players</strong>
+                        <div class="example">🏃 <strong>Competitors</strong> = người tham gia thi đấu. 🤼 <strong>Opponents</strong> = đối thủ trực tiếp. 👕 <strong>Players</strong> = cầu thủ, người chơi.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #64748b;">
+                        <strong>📅 athletics / sport / game / play</strong>
+                        <div class="example">🏃‍♂️ <strong>Athletics</strong> = điền kinh. ⚽ <strong>Sport</strong> = thể thao nói chung. 🃏 <strong>Game</strong> = trò chơi (cờ, bài). 🎭 <strong>Play</strong> = vở kịch.</div>
+                    </div>
+                    <div class="contrast-card" style="border-left-color: #a855f7;">
+                        <strong>🏊‍♂️ train / practice / exercise / work out</strong>
+                        <div class="example">📘 <strong>Train</strong> = huấn luyện (dài hạn). 🎯 <strong>Practice</strong> = luyện tập kỹ năng. 🏋️ <strong>Exercise</strong> = tập thể dục nói chung. 💪 <strong>Work out</strong> = tập luyện cường độ cao.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 2: PHRASAL VERBS & COLLOCATIONS (sport edition) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>⛹️ Nhóm 2: Phrasal verbs + Phrases & collocations <span class="badge-group">Học theo diễn biến trận đấu</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="timeline-stage">
+                    <h3>🎽 1. Trước trận & khởi động</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">join in</span> – tham gia hoạt động cùng người khác <br> <span class="phrasal-term">take up</span> – bắt đầu một môn thể thao mới <br> <span class="phrasal-term">warm up</span> – khởi động <br> <span class="phrasal-term">get through to the final</span> – lọt vào chung kết <br> <span class="phrasal-term">knock out</span> – loại khỏi giải đấu (bị đánh bại) <br> <span class="phrasal-term">pull out of the race</span> – rút khỏi cuộc đua</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>⚽ 2. Trong trận đấu</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">beat somebody</span> – đánh bại ai đó <br> <span class="phrasal-term">score a goal / point</span> – ghi bàn/ghi điểm <br> <span class="phrasal-term">equal the score</span> – gỡ hòa <br> <span class="phrasal-term">draw with someone</span> – hòa với ai <br> <span class="phrasal-term">call off (the match)</span> – hủy trận đấu vì lý do (thời tiết, sân bị ngập) <br> <span class="phrasal-term">play against</span> – đấu với <br> <span class="phrasal-term">take the lead</span> – dẫn trước</div>
+                </div>
+                <div class="timeline-stage">
+                    <h3>🏆 3. Kết thúc & cảm xúc</h3>
+                    <div class="phrasal-blue"><span class="phrasal-term">go off</span> – bắt đầu (chuông báo hiệu) <br> <span class="phrasal-term">put off</span> – làm nản lòng / trì hoãn <br> <span class="phrasal-term">keep on</span> – tiếp tục làm gì <br> <span class="phrasal-term">be mad about</span> – say mê, cực kỳ thích <br> <span class="phrasal-term">get used to (doing)</span> – quen với việc gì <br> <span class="phrasal-term">take turns</span> – lần lượt làm gì</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 3: WORD PATTERNS (giới từ & cấu trúc đặc trưng) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #a855f7;">
+                <h2>🔗 Nhóm 3: Word patterns <span class="badge-group">Cụm từ cố định trong thể thao</span></h2>
+            </div>
+            <div class="group-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px;">
+                    <div class="flashcard"><span class="pattern-word">fond ___ sth</span> → fond OF <span class="meaning-vn">(thích, yêu thích)</span></div>
+                    <div class="flashcard"><span class="pattern-word">interested ___ sth</span> → interested IN <span class="meaning-vn">(quan tâm đến)</span></div>
+                    <div class="flashcard"><span class="pattern-word">concentrate ___ sth</span> → concentrate ON <span class="meaning-vn">(tập trung vào)</span></div>
+                    <div class="flashcard"><span class="pattern-word">find it difficult ___ do</span> → find it difficult TO DO <span class="meaning-vn">(cảm thấy khó làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">stop sb ___ doing</span> → stop sb FROM doing <span class="meaning-vn">(ngăn ai làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">used ___ (doing) sth</span> → used TO (do) / get used TO (doing) <span class="meaning-vn">(đã từng / quen với)</span></div>
+                    <div class="flashcard"><span class="pattern-word">succeed ___ doing</span> → succeed IN doing <span class="meaning-vn">(thành công khi làm gì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">blame sb ___ sth</span> → blame sb FOR sth <span class="meaning-vn">(đổ lỗi cho ai)</span></div>
+                    <div class="flashcard"><span class="pattern-word">apologise ___ doing</span> → apologise FOR doing <span class="meaning-vn">(xin lỗi vì)</span></div>
+                    <div class="flashcard"><span class="pattern-word">insist ___ doing</span> → insist ON doing <span class="meaning-vn">(khăng khăng làm gì)</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NHÓM 4: WORD FORMATION (chi tiết, dựa trên bài tập unit 4) -->
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #f97316;">
+                <h2>📝 Nhóm 4: Word formation <span class="badge-group">Từ vựng gốc - phái sinh</span></h2>
+            </div>
+            <div class="group-content">
+                <div class="word-grid">
+                    <div class="word-card"><div class="main-word">train</div><div class="ipa">/treɪn/</div><div class="meaning">🏋️ huấn luyện, đào tạo</div><div class="example-sentence">➤ He trains every day to become a champion.</div><div class="colloc">🔹 train hard / train for a marathon</div><div class="word-forms">🔸 trainer (n) – huấn luyện viên cá nhân<br>🔸 training (n) – quá trình tập luyện<br>🔸 trainee (n) – thực tập sinh</div><div class="syn-ant">🔄 coach, instruct ❌ neglect</div></div>
+                    <div class="word-card"><div class="main-word">compete</div><div class="ipa">/kəmˈpiːt/</div><div class="meaning">🏅 thi đấu, cạnh tranh</div><div class="example-sentence">➤ Athletes compete for the gold medal.</div><div class="colloc">🔹 compete against / compete in a tournament</div><div class="word-forms">🔸 competition (n) – cuộc thi<br>🔸 competitor (n) – đấu thủ<br>🔸 competitive (adj) – mang tính cạnh tranh</div><div class="syn-ant">🔄 contend, rival ❌ cooperate</div></div>
+                    <div class="word-card"><div class="main-word">practice</div><div class="ipa">/ˈpræktɪs/</div><div class="meaning">🎯 luyện tập (danh từ/động từ - Anh-Anh)</div><div class="example-sentence">➤ Practice makes perfect.</div><div class="colloc">🔹 football practice / practice a skill</div><div class="word-forms">🔸 practical (adj) – thực tế<br>🔸 practitioner (n) – người hành nghề<br>🔸 practised (adj) – thành thạo</div><div class="syn-ant">🔄 rehearsal, drill ❌ ignore</div></div>
+                    <div class="word-card"><div class="main-word">equip</div><div class="ipa">/ɪˈkwɪp/</div><div class="meaning">🛠️ trang bị</div><div class="example-sentence">➤ The gym is equipped with modern machines.</div><div class="colloc">🔹 fully equipped / equipment (n) thiết bị</div><div class="word-forms">🔸 equipment (n) – dụng cụ thể thao<br>🔸 equipped (adj) – được trang bị</div><div class="syn-ant">🔄 furnish, supply ❌ strip</div></div>
+                    <div class="word-card"><div class="main-word">associate</div><div class="ipa">/əˈsəʊʃieɪt/</div><div class="meaning">🤝 kết hợp, liên kết (Football Association)</div><div class="example-sentence">➤ F.A. stands for Football Association.</div><div class="colloc">🔹 associate with / business associate</div><div class="word-forms">🔸 association (n) – hiệp hội<br>🔸 associated (adj) – có liên quan</div><div class="syn-ant">🔄 connect, unite ❌ separate</div></div>
+                    <div class="word-card"><div class="main-word">medal</div><div class="ipa">/ˈmedl/</div><div class="meaning">🥇 huy chương</div><div class="example-sentence">➤ She won a silver medal in swimming.</div><div class="colloc">🔹 gold/silver/bronze medal / medal ceremony</div><div class="word-forms">🔸 medallist (n) – người đoạt huy chương<br>🔸 medallic (adj) – thuộc về huy chương</div><div class="syn-ant">🔄 prize, award ❌</div></div>
+                    <div class="word-card"><div class="main-word">allow</div><div class="ipa">/əˈlaʊ/</div><div class="meaning">💰 cho phép / tiền trợ cấp</div><div class="example-sentence">➤ In America, pocket money is often called an allowance.</div><div class="colloc">🔹 allowance for / make allowance for</div><div class="word-forms">🔸 allowance (n) – tiền cho phép, trợ cấp<br>🔸 allowable (adj) – được cho phép</div><div class="syn-ant">🔄 permit, grant ❌ forbid</div></div>
+                    <div class="word-card"><div class="main-word">maintain</div><div class="ipa">/meɪnˈteɪn/</div><div class="meaning">🔧 duy trì, bảo trì</div><div class="example-sentence">➤ Essential maintenance is carried out on the pool.</div><div class="colloc">🔹 maintain health / maintain equipment</div><div class="word-forms">🔸 maintenance (n) – sự bảo trì<br>🔸 well-maintained (adj) – được bảo dưỡng tốt</div><div class="syn-ant">🔄 preserve, uphold ❌ neglect</div></div>
+                    <div class="word-card"><div class="main-word">fortune</div><div class="ipa">/ˈfɔːtʃuːn/</div><div class="meaning">💰 tài sản lớn, vận may</div><div class="example-sentence">➤ Professional players earn a fortune.</div><div class="colloc">🔹 make a fortune / fortunate (adj) may mắn</div><div class="word-forms">🔸 fortunate (adj) – may mắn<br>🔸 unfortunately (adv) – không may</div><div class="syn-ant">🔄 wealth, luck ❌ misfortune</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TAB LUYỆN TẬP (câu hỏi từ file PDF unit 4) ================= -->
+    <div id="practiceTab" class="tab-pane">
+        <div class="group">
+            <div class="group-header" style="border-bottom-color: #dc2626;">
+                <h2>✍️ Bài tập từ vựng Unit 4 (Sport & Leisure)</h2>
+            </div>
+            <div class="group-content exercise-list">
+                <form id="sportsQuiz">
+                    <h3>🏆 Part A: Hoàn thành câu với từ thích hợp (sân bãi, dụng cụ)</h3>
+                    <div class="question-item">1. We used to go skating at the ice ______ every Saturday. → <input type="text" name="q1" placeholder="rink"></div>
+                    <div class="question-item">2. Keith had never seen such a large golf ______ until he went to Scotland. → <input type="text" name="q2" placeholder="course"></div>
+                    <div class="question-item">3. We all met at the basketball ______ at half past three. → <input type="text" name="q3" placeholder="court"></div>
+                    <div class="question-item">4. It's called a boxing ______ but it's actually square! → <input type="text" name="q4" placeholder="ring"></div>
+                    <div class="question-item">5. For the 800 metres race, you have to run round the ______ twice. → <input type="text" name="q5" placeholder="track"></div>
+                    <div class="question-item">6. The football match had to be called off because the ______ was flooded. → <input type="text" name="q6" placeholder="pitch"></div>
+                    <div class="question-item">7. Adrian got a new fishing ______ for his birthday. → <input type="text" name="q7" placeholder="rod"></div>
+                    <div class="question-item">8. Can I borrow your tennis ______? → <input type="text" name="q8" placeholder="racket"></div>
+
+                    <h3>🥅 Part B: Chọn từ đúng (umpire/referee, beat/win, ...)</h3>
+                    <div class="question-item">9. The ______ blew the whistle and the football match began. (umpire/referee) → <input type="text" name="q9" size="12"></div>
+                    <div class="question-item">10. Coventry City ______ 3-3 with Sunderland. (equalled/drew) → <input type="text" name="q10"></div>
+                    <div class="question-item">11. Our team ______ three goals in the second half. (scored/won) → <input type="text" name="q11"></div>
+                    <div class="question-item">12. They ______ us but it was a great match. (beat/won) → <input type="text" name="q12"></div>
+                    <div class="question-item">13. Do you fancy a ______ of cards? (game/play) → <input type="text" name="q13"></div>
+                    <div class="question-item">14. The play was so boring we walked out during the ______. (half time/interval) → <input type="text" name="q14"></div>
+
+                    <h3>🏋️ Part C: Phrasal verbs & cụm từ</h3>
+                    <div class="question-item">15. I don't know how you can ______ getting up so early. (put up with) -> viết cụm: put ______ up (3 từ) → <input type="text" name="q15" placeholder="put up with"></div>
+                    <div class="question-item">16. We can't ______ the match any longer. (put off) → <input type="text" name="q16" placeholder="put off"></div>
+                    <div class="question-item">17. Becca had to ______ of the race when she sprained her ankle. (pull out) → <input type="text" name="q17"></div>
+                    <div class="question-item">18. They were knocked ______ in the semi-final. (out) → <input type="text" name="q18"></div>
+                    <div class="question-item">19. Rachel is mad ______ the Eurovision Song Contest. (about) → <input type="text" name="q19"></div>
+                    <div class="question-item">20. Each player takes it ______ turn to roll the dice. (in) → <input type="text" name="q20"></div>
+
+                    <h3>📝 Part D: Word formation (từ trong ngoặc)</h3>
+                    <div class="question-item">21. I need to buy a new pair of ______ (TRAIN). → <input type="text" name="q21"></div>
+                    <div class="question-item">22. Ellie used to ______ for hours to juggle properly. (PRACTICE) → <input type="text" name="q22"></div>
+                    <div class="question-item">23. Would you describe yourself as a ______ person? (COMPETE) → <input type="text" name="q23"></div>
+                    <div class="question-item">24. Many professional basketball players earn a ______ (FORTUNE). → <input type="text" name="q24"></div>
+                    <div class="question-item">25. F.A. stands for Football ______ (ASSOCIATE). → <input type="text" name="q25"></div>
+                    <div class="question-item">26. The gold, silver and bronze ______ took their places. (MEDAL) → <input type="text" name="q26"></div>
+                    <div class="question-item">27. In America, pocket money is often called an ______ (ALLOW). → <input type="text" name="q27"></div>
+                    <div class="question-item">28. The swimming pool is closed for essential ______ (MAINTAIN). → <input type="text" name="q28"></div>
+                    <div class="question-item">29. When I started snooker, I had no real ______ of the rules. (KNOW) → <input type="text" name="q29"></div>
+                    <div class="question-item">30. My ______ was someone who'd been playing for years. (OPPOSE) → <input type="text" name="q30"></div>
+
+                    <button type="button" id="checkSportsBtn" style="background:#dc2626; color:white; border:none; padding:12px 28px; border-radius:40px; font-weight:bold; margin-top:20px;">🏅 Kiểm tra đáp án</button>
+                    <div id="resultArea" style="margin-top: 20px; font-weight: bold; background: #e6f7f5; padding: 16px; border-radius: 24px;"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching
+    const btns = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            panes.forEach(pane => pane.classList.remove('active-pane'));
+            if(tabId === 'theory') document.getElementById('theoryTab').classList.add('active-pane');
+            else document.getElementById('practiceTab').classList.add('active-pane');
+        });
+    });
+
+    // Đáp án bài tập (dựa trên nội dung unit 4)
+    const sportAnswers = {
+        q1:"rink", q2:"course", q3:"court", q4:"ring", q5:"track", q6:"pitch", q7:"rod", q8:"racket",
+        q9:"referee", q10:"drew", q11:"scored", q12:"beat", q13:"game", q14:"interval",
+        q15:"put up with", q16:"put off", q17:"pull out", q18:"out", q19:"about", q20:"in",
+        q21:"trainers", q22:"practise", q23:"competitive", q24:"fortune", q25:"Association", q26:"medallists",
+        q27:"allowance", q28:"maintenance", q29:"knowledge", q30:"opponent"
+    };
+    document.getElementById('checkSportsBtn').addEventListener('click', function(){
+        let score = 0;
+        let total = 30;
+        for(let i=1; i<=30; i++){
+            let userAns = document.querySelector(`[name="q${i}"]`)?.value.trim().toLowerCase();
+            let correct = sportAnswers[`q${i}`].toLowerCase();
+            if(userAns === correct) score++;
+        }
+        document.getElementById('resultArea').innerHTML = `🥳 Bạn trả lời đúng ${score}/${total} câu. ${score >= 25 ? '🏆 Tuyệt vời! Bậc thầy thể thao!' : (score>=18 ? '✅ Tốt, hãy xem lại các câu sai nhé!' : '📖 Hãy học kỹ lý thuyết từ vựng unit 4.')}`;
+    });
+</script>
+</body>
+</html>
